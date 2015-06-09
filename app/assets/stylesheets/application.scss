@@ -1,0 +1,15 @@
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+div.landing {
+  display: block;
+  width: 215px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0px;
+}
+
+div.landing h1 {
+  text-align: center;
+}
