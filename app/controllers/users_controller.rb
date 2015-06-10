@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in!(@user)
-      redirect_to user_url(@user)
+      redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new
@@ -18,7 +18,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(library_books: :author, :written_works).find(params[:id])
+    render :show
   end
 
   private

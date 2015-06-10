@@ -11,10 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609182418) do
+ActiveRecord::Schema.define(version: 20150609224232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "book_subjects", force: :cascade do |t|
+    t.integer  "book_id",    null: false
+    t.integer  "subject_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "book_subjects", ["book_id"], name: "index_book_subjects_on_book_id", using: :btree
+  add_index "book_subjects", ["subject_id"], name: "index_book_subjects_on_subject_id", using: :btree
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title",        null: false
+    t.date     "release_date", null: false
+    t.integer  "author_id",    null: false
+    t.string   "doc_url",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
+
+  create_table "library_items", force: :cascade do |t|
+    t.integer  "book_id",    null: false
+    t.integer  "owner_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "library_items", ["book_id"], name: "index_library_items_on_book_id", using: :btree
+  add_index "library_items", ["owner_id"], name: "index_library_items_on_owner_id", using: :btree
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false

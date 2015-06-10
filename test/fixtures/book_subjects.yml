@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: book_subjects
+#
+#  id         :integer          not null, primary key
+#  book_id    :integer          not null
+#  subject_id :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book_id: 1
+  subject_id: 1
+
+two:
+  book_id: 1
+  subject_id: 1

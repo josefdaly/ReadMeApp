@@ -19,6 +19,21 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   attr_reader :password
 
+  has_many(
+    :library_items,
+    foreign_key: :owner_id
+  )
+  has_many(
+    :library_books,
+    through: :library_items,
+    source: :book
+  )
+  has_many(
+    :written_works,
+    class_name: 'Book',
+    foreign_key: :author_id
+  )
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return user if user && user.is_password?(password)

@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: library_items
+#
+#  id         :integer          not null, primary key
+#  book_id    :integer          not null
+#  owner_id   :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bookd_id: 1
+  owner_id: 1
+
+two:
+  bookd_id: 1
+  owner_id: 1
