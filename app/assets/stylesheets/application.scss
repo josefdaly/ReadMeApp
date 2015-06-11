@@ -2,6 +2,15 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body {
+  background: #D1E0FF;
+}
+
+#main {
+  display: block;
+  background: #F0F5FF;
+  height: 100%;
+}
 div.landing {
   display: block;
   width: 215px;
@@ -13,10 +22,68 @@ div.landing {
   transform: translateY(70px);
 }
 
+li {
+  padding-left: 0px;
+}
+
 div.landing h3 {
   text-align: center;
 }
 
 h1.welcome {
   text-align: center;
+}
+
+div.book-index {
+  background: #FFE6E6;
+  border-radius: 5px;
+  display: block;
+  float: left;
+  padding: 20px;
+  height: 300px;
+  overflow: scroll;
+}
+
+li.book-index-item {
+  background: #FFB2B2;
+  margin: 1px;
+  list-style-type: none;
+}
+
+li.book-index-item li {
+  list-style-type: none;
+}
+
+ul,li,h1,h2,h3,h4 {
+  list-style-type: none;
+  list-style-position:inside;
+  margin:0;
+  padding:0;
+}
+
+div.book-information {
+  background: #A0B8E6;
+  display: block;
+  float: left;
+  min-width: 35%;
+  position: relative;
+  padding: 20px;
+}
+
+div.book-info-header {
+  background: white;
+  display: block;
+  height: 70px;
+  width: 50%;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+img.cover-place-holder {
+  margin: 10px;
+  float: left;
+}
+
+button.add-to-library {
+  float: right;
 }

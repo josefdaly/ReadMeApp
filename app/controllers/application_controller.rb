@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def redirect_to_homepage
     if current_user
-      redirect_to user_url(current_user)
+      redirect_to root_url
     end
   end
 end

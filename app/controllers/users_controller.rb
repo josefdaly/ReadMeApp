@@ -18,8 +18,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(library_books: :author, :written_works).find(params[:id])
-    render :show
+    @user = User.includes(:written_works, library_books: :author).find(params[:id])
+    render 'show.json.jbuilder'
   end
 
   private

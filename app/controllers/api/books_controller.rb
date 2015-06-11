@@ -1,5 +1,5 @@
 module Api
-  class BooksController < ApplicationController
+  class BooksController < ApiController
     def create
       @book = Book.new(book_params.merge({ author_id: current_user.id }))
 

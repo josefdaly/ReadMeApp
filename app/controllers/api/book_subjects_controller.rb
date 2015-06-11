@@ -1,4 +1,4 @@
 module Api
-  class BookSubjectsController < ApplicationController
+  class BookSubjectsController < ApiController
   end
 end

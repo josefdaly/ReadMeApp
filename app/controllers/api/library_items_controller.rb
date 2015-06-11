@@ -1,4 +1,4 @@
 module Api
-  class LibraryItemsController < ApplicationController
+  class LibraryItemsController < ApiController
   end
 end

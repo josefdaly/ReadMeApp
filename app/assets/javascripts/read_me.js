@@ -5,6 +5,10 @@ window.ReadMe = {
   Routers: {},
   initialize: function() {
     console.log('Hello from Backbone!');
+    new ReadMe.Routers.Router({
+      '$rootEl': $('#main')
+    })
+    Backbone.history.start();
   }
 };
 

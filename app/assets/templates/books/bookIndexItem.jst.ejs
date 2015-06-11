@@ -1,0 +1,8 @@
+<ul>
+  <li><span>Title: <%= book.escape('title') %></span></li>
+  <% if (book.escape('author_fname')) { %>
+    <li><span>Author: <%= book.escape('author_fname') %>
+    <%= book.escape('author_lname') %></span></li>
+  <% } %>
+  <li><span>Published: <%= book.escape('release_date') %></span></li>
+</ul>

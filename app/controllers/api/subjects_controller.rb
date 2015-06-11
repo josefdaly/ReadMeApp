@@ -1,5 +1,5 @@
 module Api
-  class SubjectsController < ApplicationController
+  class SubjectsController < ApiController
     def create
       @subject = Subject.new(subject_params)
 
