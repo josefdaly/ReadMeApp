@@ -4,7 +4,6 @@ ReadMe.Routers.Router = Backbone.Router.extend({
     this.currentUser = new Backbone.Model.extend({ url: '/api/current_user'})
     this.users = new ReadMe.Collections.Users();
     this.books = new ReadMe.Collections.Books();
-
   },
 
   routes: {
@@ -15,8 +14,8 @@ ReadMe.Routers.Router = Backbone.Router.extend({
   },
 
   homePage: function () {
-    // var user = users.getOrFetch(this.currentUser.id);
-    // user.fetch();
+    var user = this.users.getOrFetch(window.CURRENT_USER_ID);
+    user.fetch();
     var view = new ReadMe.Views.UserShow({ model: user})
     this.$rootEl.html(view.render().$el);
   },
