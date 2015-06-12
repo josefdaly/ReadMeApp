@@ -28,4 +28,8 @@ class Book < ActiveRecord::Base
     through: :book_subjects,
     source: :subject
   )
+  has_many(
+    :reviews,
+    class_name: 'Review'
+  )
 end
