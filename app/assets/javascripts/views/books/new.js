@@ -32,7 +32,8 @@ ReadMe.Views.BookNew = Backbone.View.extend({
     var that = this;
     cloudinary.openUploadWidget(CLOUDINARY_SETTINGS, function (error, payload) {
       $('.upload-file').val(payload[0].original_filename);
-      that.url = payload[0].url
+      debugger
+      that.url = payload[0].secure_url
     });
   }
 })
