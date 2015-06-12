@@ -13,7 +13,11 @@ ReadMe.Views.BookRead = Backbone.View.extend({
     return this
   },
   startBook: function () {
-    this.Book = ePub(this.model.get('doc_url'))
+    this.Book = ePub(this.model.get('doc_url'), {
+      width: 400,
+      height: 600,
+      spreads: false
+    })
     console.log('yo')
     this.Book.renderTo("area")
   },

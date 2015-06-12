@@ -2,7 +2,6 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.readyBookCover);
-    debugger;
   },
   template: JST['books/show'],
   events: {
@@ -12,6 +11,7 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
   readyBookCover: function () {
     var Book = ePub(this.model.get('doc_url'))
     Book.on('book:ready', function (){
+      debugger
       Book.renderTo("cover-show");
     }.bind(this))
   },

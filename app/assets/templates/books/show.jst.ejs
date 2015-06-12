@@ -7,7 +7,7 @@
     <h1><%= book.escape('title') %></h1>
     <h3 class="pull-right"><%= book.escape('author_fname') %> <%= book.escape('author_lname') %></h3>
   </div>
-  <div class="cover-show">
+  <div id="cover-show">
     <img class="cover-place-holder" src=<%=cover_url%>/>
   </div>
   <p class="book-description"><%= book.escape('description')%> <a href="#book/<%=book.id%>">Read Book!</a></p>
