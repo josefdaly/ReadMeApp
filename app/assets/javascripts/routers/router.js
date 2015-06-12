@@ -19,7 +19,9 @@ ReadMe.Routers.Router = Backbone.Router.extend({
     var user = this.users.getOrFetch(window.CURRENT_USER_ID);
     user.fetch();
     var view = new ReadMe.Views.UserShow({ model: user});
-    this.$rootEl.html(view.render().$el);
+    this._swapView(view);
+    $('.active').removeClass('active');
+    $('.home-page').addClass('active');
   },
 
   userShow: function (id) {
@@ -40,6 +42,8 @@ ReadMe.Routers.Router = Backbone.Router.extend({
     user.fetch();
     var view = new ReadMe.Views.BookNew({ model: user });
     this._swapView(view);
+    $('.active').removeClass('active');
+    $('.upload-doc').addClass('active');
   },
   bookRead: function (id) {
     var book = this.books.getOrFetch(id);

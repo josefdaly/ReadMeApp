@@ -6,7 +6,7 @@ body {
   background: #D1E0FF;
 }
 .active {
-  border-bottom: black;
+  border-bottom: solid #3399FF;
 
 }
 
@@ -34,11 +34,12 @@ h1.welcome span {
 span.tabs {
   position: absolute;
   right: 25px;
-  bottom: 20px;
+  bottom: 16px;
 }
 span.tabs a {
   padding: 5px;
   text-decoration: none;
+  padding-bottom: 15px;
 }
 nav.nav-bar {
   position: relative;
@@ -141,7 +142,6 @@ div.book-info-header h1 {
 }
 
 div.book-info-header h3 {
-
 }
 
 img.cover-place-holder {
@@ -149,8 +149,19 @@ img.cover-place-holder {
   float: left;
 }
 
-button.add-to-library {
+div.show-buttons {
   float: right;
+  position: relative;
+}
+
+button.add-to-library {
+  position: absolute;
+  right: 10px;
+}
+button.read {
+  position: absolute;
+  right: 10px;
+  top: 40px;
 }
 
 p.book-description {

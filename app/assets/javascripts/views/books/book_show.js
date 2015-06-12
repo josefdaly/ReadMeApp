@@ -5,7 +5,8 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
   },
   template: JST['books/show'],
   events: {
-    'click button.add-to-library': 'addToLibrary'
+    'click button.add-to-library': 'addToLibrary',
+    'click button.read':'redirectRead'
   },
   readyBookCover: function () {
     var Book = ePub(this.model.get('doc_url'))
@@ -30,4 +31,7 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
     var that = this;
     library_item.save()
   },
+  redirectRead: function (event) {
+    Backbone.history.navigate("book/" + this.model.id, { trigger: true })
+  }
 })

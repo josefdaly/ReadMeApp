@@ -1,5 +1,8 @@
 <div class="book-information">
-  <button class="add-to-library" type="button" name="button">Add To Library</button>
+  <div class="show-buttons">
+    <button class="add-to-library btn btn-default" type="button" name="button">Add To Library</button>
+    <button class="read btn btn-default pull-right" type="button" name="button">Read Now!</button>
+  </div>
   <div class="book-info-header">
     <h1><%= book.escape('title') %></h1>
     <h3 class="pull-right"><%= book.escape('author_fname') %> <%= book.escape('author_lname') %></h3>
