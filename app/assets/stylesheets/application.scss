@@ -73,6 +73,10 @@ div.landing {
   // transform: translateY(70px);
 }
 
+li.book-index-item:hover {
+  background: #FF9999;
+}
+
 li {
   padding-left: 0px;
 }
@@ -117,18 +121,27 @@ div.book-information {
   background: #A0B8E6;
   display: block;
   float: left;
-  min-width: 35%;
+  min-width: 550px;
+  width:40%;
   position: relative;
   padding: 20px;
 }
 
 div.book-info-header {
   background: white;
+  position: relative;
   display: block;
-  height: 70px;
   width: 70%;
   padding-left: 8px;
   padding-right: 8px;
+  padding-bottom: 40px;
+}
+div.book-info-header h1 {
+
+}
+
+div.book-info-header h3 {
+
 }
 
 img.cover-place-holder {
@@ -141,7 +154,7 @@ button.add-to-library {
 }
 
 p.book-description {
-  width: 170px;
+  width: 45%;
   display: block;
   float: left;
   background: white;

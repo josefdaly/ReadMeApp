@@ -5,12 +5,18 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
   template: JST['navbar'],
   events: {
     'click .upload-doc': 'redirectNewBook',
-    'click .log-out': 'logOut'
+    'click .log-out': 'logOut',
+    'click .home-page': 'redirectHomePage'
   },
   render: function () {
     var content = this.template();
     this.$el.html(content);
     return this;
+  },
+  redirectHomePage: function (event) {
+    event.preventDefault();
+    $('.home-page').addClass('active');
+    Backbone.history.navigate("", { trigger: true })
   },
   redirectNewBook: function (event) {
     event.preventDefault();
