@@ -5,6 +5,6 @@
     <h3 class="pull-right"><%= book.escape('author_fname') %> <%= book.escape('author_lname') %></h3>
   </div>
   <img class="cover-place-holder" src="http://lorempixel.com/output/food-h-g-208-359-1.jpg"/>
-  <p class="book-description"><%= book.escape('description')%></p>
+  <p class="book-description"><%= book.escape('description')%> <a href="#book/<%=book.id%>">Read Book!</a></p>
 
 </div>

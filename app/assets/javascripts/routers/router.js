@@ -10,34 +10,41 @@ ReadMe.Routers.Router = Backbone.Router.extend({
     "" : "homePage",
     "users/:id" : "userShow",
     "books/:id" : "bookShow",
-    "book/new" : "bookNew"
+    "book/new" : "bookNew",
+    "book/:id" : "bookRead"
 
   },
 
   homePage: function () {
     var user = this.users.getOrFetch(window.CURRENT_USER_ID);
     user.fetch();
-    var view = new ReadMe.Views.UserShow({ model: user})
+    var view = new ReadMe.Views.UserShow({ model: user});
     this.$rootEl.html(view.render().$el);
   },
 
   userShow: function (id) {
     var user = this.users.getOrFetch(id);
     user.fetch();
-    var view = new ReadMe.Views.UserShow({ model: user })
+    var view = new ReadMe.Views.UserShow({ model: user });
     this._swapView(view);
   },
 
   bookShow: function (id) {
     var book = this.books.getOrFetch(id);
     book.fetch();
-    var view = new ReadMe.Views.BookShow({ model: book })
+    var view = new ReadMe.Views.BookShow({ model: book });
     this._swapView(view);
   },
   bookNew: function () {
     var user = this.users.getOrFetch(window.CURRENT_USER_ID);
     user.fetch();
-    var view = new ReadMe.Views.BookNew({ model: user })
+    var view = new ReadMe.Views.BookNew({ model: user });
+    this._swapView(view);
+  },
+  bookRead: function (id) {
+    var book = this.books.getOrFetch(id);
+    book.fetch();
+    var view = new ReadMe.Views.BookRead({ model: book });
     this._swapView(view);
   },
   _swapView: function (view) {
