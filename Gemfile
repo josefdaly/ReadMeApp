@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'backbone-on-rails'
+gem 'figaro'
 
 group :development, :test do
   gem 'annotate'

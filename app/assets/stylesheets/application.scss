@@ -6,6 +6,14 @@ body {
   background: #D1E0FF;
 }
 
+a.upload-doc {
+  float: left;
+}
+
+nav.nav-bar a.logo {
+  float: left;
+}
+
 #main {
   display: block;
   background: #F0F5FF;
@@ -74,7 +82,7 @@ div.book-info-header {
   background: white;
   display: block;
   height: 70px;
-  width: 50%;
+  width: 70%;
   padding-left: 8px;
   padding-right: 8px;
 }
@@ -86,4 +94,13 @@ img.cover-place-holder {
 
 button.add-to-library {
   float: right;
+}
+
+p.book-description {
+  width: 170px;
+  display: block;
+  float: left;
+  background: white;
+  margin: 10px;
+  padding: 10px;
 }

@@ -1,7 +1,7 @@
 module Api
   class BooksController < ApiController
     def create
-      @book = Book.new(book_params.merge({ author_id: current_user.id }))
+      @book = Book.new(book_params)
 
       if @book.save
         render json: @book
@@ -28,8 +28,8 @@ module Api
 
     private
 
-    def board_params
-      params.require(:book).permit(:title, :release_date, :doc_url)
+    def book_params
+      params.require(:book).permit(:title, :description, :doc_url, :author_id)
     end
   end
 end

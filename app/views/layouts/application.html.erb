@@ -5,12 +5,20 @@
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application'%>
 
+
   <%= csrf_meta_tags %>
   <% if current_user %>
     <script type="text/javascript">
       window.CURRENT_USER_ID = "<%= current_user.id %>"
     </script>
   <% end %>
+  <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    window.CLOUDINARY_SETTINGS = {
+      cloud_name: "<%= ENV['cloud_name'] %>",
+      upload_preset: "<%= ENV['upload_preset'] %>"
+    }
+  </script>
 </head>
 <body>
 <% if current_user %>

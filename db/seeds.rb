@@ -12,17 +12,26 @@
     fname: "#{i}",
     lname: "#{i+15}",
     session_token: User.generate_session_token,
-    password_digest: User.generate_session_token
+    password_digest: User.generate_session_token,
+    description: 'I am a writer. I like Steven King and the gospel of John.'
   )
 end
+
+User.create(
+  email: "admin",
+  fname: 'Joseph',
+  lname: 'Daly',
+  session_token: User.generate_session_token,
+  password_digest: BCrypt::Password.create('123456')
+)
 
 10.times do |i|
   5.times do |j|
     Book.create(
       title: "#{i+j}#{i*j} book",
-      release_date: Time.now,
       author_id: i+1,
-      doc_url: 'http://lorempixel.com/output/animals-h-g-194-302-6.jpg'
+      doc_url: 'http://lorempixel.com/output/nature-h-g-353-480-7.jpg',
+      description: 'This book is about a boy and his dog.'
     )
   end
 end

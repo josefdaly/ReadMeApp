@@ -12,7 +12,7 @@
 #
 
 class Book < ActiveRecord::Base
-  validates :title, :release_date, :author_id, :doc_url, presence: true
+  validates :title, :author_id, :doc_url, presence: true
 
   belongs_to(
     :author,

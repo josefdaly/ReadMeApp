@@ -3,7 +3,6 @@ ReadMe.Views.UserShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, 'sync', this.render);
     this.addWrittenWorks();
     this.addLibraryBooks();
-    debugger
   },
   template: JST['users/show'],
   render: function () {

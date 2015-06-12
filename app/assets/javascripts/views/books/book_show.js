@@ -17,10 +17,7 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
       book_id: this.model.id,
       owner_id: window.CURRENT_USER_ID
     })
-    library_item.save({
-      success: function () {
-        Backbone.history.navigate("", {trigger: true})
-      }
-    })
-  }
+    var that = this;
+    library_item.save()
+  },
 })

@@ -9,7 +9,8 @@ ReadMe.Routers.Router = Backbone.Router.extend({
   routes: {
     "" : "homePage",
     "users/:id" : "userShow",
-    "books/:id" : "bookShow"
+    "books/:id" : "bookShow",
+    "book/new" : "bookNew"
 
   },
 
@@ -30,7 +31,13 @@ ReadMe.Routers.Router = Backbone.Router.extend({
   bookShow: function (id) {
     var book = this.books.getOrFetch(id);
     book.fetch();
-    var view = new ReadMe.Views.BookShow({ model: book})
+    var view = new ReadMe.Views.BookShow({ model: book })
+    this._swapView(view);
+  },
+  bookNew: function () {
+    var user = this.users.getOrFetch(window.CURRENT_USER_ID);
+    user.fetch();
+    var view = new ReadMe.Views.BookNew({ model: user })
     this._swapView(view);
   },
   _swapView: function (view) {
