@@ -10,3 +10,9 @@ if include_subjects
     json.subject subject.title
   end
 end
+include_reviews ||= false
+if include_reviews
+  json.reviews(book.reviews).each do |review|
+    json.partial! 'api/reviews/review', review: review, include_author: true
+  end
+end

@@ -14,7 +14,7 @@ ReadMe.Models.User = Backbone.Model.extend({
 
     return this._written_works;
   },
-  parse: function(response){
+  parse: function (response) {
 
     if (response.written_works) {
       this.written_works().set(response.written_works, {parse: true})

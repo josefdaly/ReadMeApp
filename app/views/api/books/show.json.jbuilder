@@ -1,1 +1,6 @@
-json.partial! 'api/books/book', book: @book, include_author: true, include_subjects: true
+json.partial! 'api/books/book', {
+  book: @book,
+  include_author: true,
+  include_subjects: true,
+  include_reviews: true
+}
