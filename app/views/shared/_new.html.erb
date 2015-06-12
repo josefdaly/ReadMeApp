@@ -1,9 +1,15 @@
-<h1 class='welcome'>Welcome to readMe</h1>
+<h1 class='welcome'>read<span>Me</span></h1>
 <div class="landing well well-default center-block">
-<h3> <%= header %> </h3>
+
 <% action = '/users' if header == 'Sign Up'%>
 <% action = '/session' if header == 'Sign In'%>
-
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
 <form action="<%= action %>" method="post">
   <br>
   <input type="text" name="user[email]" placeholder="Email"> <br>
@@ -20,5 +26,12 @@
   <br>
 
   <input class="btn center-block" type="submit" name="name" value="<%= header %>">
+  <span class="sign-in-toggle">
+  <% if header == 'Sign Up' %>
+    <%= link_to('Already a member?', new_session_url)%>
+  <% elsif header == 'Sign In' %>
+    <%= link_to('New to readMe?', new_user_url) %>
+  <% end %>
+  </span>
 </form>
 </div>

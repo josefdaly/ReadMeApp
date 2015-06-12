@@ -1,6 +1,6 @@
 ReadMe.Views.BookRead = Backbone.View.extend({
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.test)
+    this.listenToOnce(this.model, 'sync', this.startBook)
   },
   template: JST['books/read'],
   events: {
@@ -12,17 +12,15 @@ ReadMe.Views.BookRead = Backbone.View.extend({
     this.$el.html(content);
     return this
   },
-  test: function () {
+  startBook: function () {
     this.Book = ePub(this.model.get('doc_url'))
+    console.log('yo')
     this.Book.renderTo("area")
-    debugger
   },
   prevPage: function () {
     this.Book.prevPage();
-    this.Book.renderTo("area")
   },
   nextPage: function () {
     this.Book.nextPage();
-    this.Book.renderTo("area")
   }
 })
