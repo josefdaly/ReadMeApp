@@ -5,12 +5,18 @@
 body {
   background: #D1E0FF;
 }
+.active {
+  border-bottom: black;
+
+}
 
 span.tabs {
   position: absolute;
   right: 25px;
-  bottom: 10px;
-  padding: 7px;
+  bottom: 20px;
+}
+span.tabs a {
+  padding: 5px;
 }
 nav.nav-bar {
   position: relative;
@@ -69,7 +75,7 @@ li.book-index-item li {
   list-style-type: none;
 }
 
-ul,li,h1,h2,h3,h4 {
+a,ul,li,h1,h2,h3,h4 {
   list-style-type: none;
   list-style-position:inside;
   margin:0;
@@ -113,21 +119,21 @@ p.book-description {
 }
 
 body {
-            overflow: hidden;
-          }
+  overflow: hidden;
+}
 
-          #main {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-          }
+#main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
-          #area {
-            width: 80%;
-            height: 100%;
-            margin: 5% auto;
-            max-width: 1250px;
-          }
+  #area {
+    width: 80%;
+    height: 100%;
+    margin: 5% auto;
+    max-width: 1250px;
+  }
 
           #area iframe {
             border: none;
