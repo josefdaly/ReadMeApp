@@ -1,4 +1,4 @@
-ReadMe.Views.ReviewIndex = Backbone.View.extend({
+ReadMe.Views.ReviewIndex = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'edit', this.addBook);
@@ -11,8 +11,8 @@ ReadMe.Views.ReviewIndex = Backbone.View.extend({
   className: 'review-index',
   render: function () {
     var content = this.template({ collection: this.collection });
-    this.$el.html(content);
     this.attachSubviews();
+    this.$el.html(content);
     return this;
   },
   addReview: function (review) {
