@@ -3,6 +3,9 @@ include_author ||= false
 if include_author
   json.author_fname book.author.fname
   json.author_lname book.author.lname
+  json.author do
+    json.partial! 'users/user', user: book.author
+  end
 end
 include_subjects ||= false
 if include_subjects
