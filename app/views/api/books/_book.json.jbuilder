@@ -16,6 +16,8 @@ end
 include_reviews ||= false
 if include_reviews
   json.reviews(book.reviews).each do |review|
-    json.partial! 'api/reviews/review', review: review, include_author: true
+    # json.partial! 'api/reviews/review', review: review, include_author: true
+    # json.reviews json.partial! 'users/user', user: review.author
+     
   end
 end

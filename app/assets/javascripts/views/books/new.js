@@ -19,7 +19,6 @@ ReadMe.Views.BookNew = Backbone.View.extend({
       description: description,
       author_id: window.CURRENT_USER_ID
     })
-    debugger
     newBook.save({}, {
       success: function () {
         this.model.written_works().add(newBook);
@@ -32,7 +31,6 @@ ReadMe.Views.BookNew = Backbone.View.extend({
     var that = this;
     cloudinary.openUploadWidget(CLOUDINARY_SETTINGS, function (error, payload) {
       $('.upload-file').val(payload[0].original_filename);
-      debugger
       that.url = payload[0].secure_url
     });
   }
