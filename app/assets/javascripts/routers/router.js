@@ -9,6 +9,7 @@ ReadMe.Routers.Router = Backbone.Router.extend({
   routes: {
     "" : "homePage",
     "users/:id" : "userShow",
+    "books/search": "bookSearch",
     "books/:id" : "bookShow",
     "book/new" : "bookNew",
     "book/:id" : "bookRead"
@@ -22,6 +23,13 @@ ReadMe.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
     $('.active').removeClass('active');
     $('.home-page').addClass('active');
+  },
+
+  bookSearch: function () {
+    var view = new ReadMe.Views.BookSearch();
+    this._swapView(view);
+    $('.active').removeClass('active');
+    $('.search').addClass('active');
   },
 
   userShow: function (id) {

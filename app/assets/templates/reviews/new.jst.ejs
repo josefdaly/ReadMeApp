@@ -1,2 +1,8 @@
 <h4>Leave an Opinion!</h4>
+<% for(i = 0; i < 5; i++){ %>
+  <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/120px-Empty_Star.svg.png"
+    class="rating-stars <%= i %>" />
+<% } %>
 <textarea rows="8" cols="80" placeholder="What did you think?"></textarea>
+<br>
+<button type="button" class="btn btn-default">Submit</button>
