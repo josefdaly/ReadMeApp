@@ -4,7 +4,7 @@ window.ReadMe = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var users = new ReadMe.Collections.Users();
+    // var users = new ReadMe.Collections.Users();
     var router = new ReadMe.Routers.Router({
       '$rootEl': $('#main')
     });

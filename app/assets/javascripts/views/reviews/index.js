@@ -17,7 +17,6 @@ ReadMe.Views.ReviewIndex = Backbone.CompositeView.extend({
     return this;
   },
   addReview: function (review) {
-    debugger
     var newReview = new ReadMe.Views.ReviewIndexItem({ model: review });
     this.addSubview('ul.review-index-list', newReview);
   },

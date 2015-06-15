@@ -2,6 +2,7 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.router = options.router
   },
+
   template: JST['navbar'],
   events: {
     'click .upload-doc': 'redirectNewBook',
@@ -9,6 +10,7 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
     'click .home-page': 'redirectHomePage',
     'click .search': 'redirectBookSearch'
   },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);

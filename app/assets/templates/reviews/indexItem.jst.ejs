@@ -1,9 +1,7 @@
 <h4><%= review.escape('title') %></h4>
-<div>
-  <% for(var i = 0; i < review.escape('quantitative').length; i++){ %>
-    <img src="http://www.oneworldkids.net/bright%20blue%20star%20100%20dpi.jpg"
-      class="rating-stars"/>
-  <% } %>
-</div>
+<div class="raty"></div>
+<span class="author" data="<%=review.escape('author_id')%>">
+  by <%= review.escape('author_fname') %>
+  <%= review.escape('author_lname') %></span>
 <hr>
 <p><%= review.escape('qualitative')%></p>

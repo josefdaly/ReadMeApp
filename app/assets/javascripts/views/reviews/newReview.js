@@ -6,6 +6,7 @@ ReadMe.Views.NewReview = Backbone.View.extend({
   render: function () {
     var content = this.template({});
     this.$el.html(content);
+    $('div.raty').raty();
     return this;
   },
   ratingStars: function () {
