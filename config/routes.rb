@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :reviews, only: [:create, :show]
-    resources :books, except: [:new, :edit, :update]
+    resources :books, except: [:new, :edit, :update] do
+      get "search", on: :collection
+    end
     resources :subjects, only: [:create, :show, :index]
     resources :book_subjects, only: [:create, :destroy]
     resources :library_items, only: [:create, :destroy]

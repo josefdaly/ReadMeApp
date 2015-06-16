@@ -9,7 +9,6 @@ ReadMe.Views.NewReview = Backbone.View.extend({
     this.$el.html(content);
     // var that = this;
     this.$('div.raty-new').attr('data-score', 0);
-    setTimeout(function () {debugger}, 0);
     setTimeout(this.renderRaty, 1000);
     return this;
   },
@@ -36,7 +35,6 @@ ReadMe.Views.NewReview = Backbone.View.extend({
   createReview: function () {
     event.preventDefault();
     var title = $('.review-title').val();
-    debugger
     var description = $('.review-description').val();
     var quantitative = $('.raty-new input').val();
     var newReview = new ReadMe.Models.Review({

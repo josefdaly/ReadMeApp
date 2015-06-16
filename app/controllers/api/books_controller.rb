@@ -17,13 +17,24 @@ module Api
 
     def index
       @books = Book.all
-      render json: @books
+
+      render :index
     end
 
     def destroy
       @book = current_user.written_works.find(params[:id])
       @book.destroy()
+
       render json: {}
+    end
+
+    def search
+      if params[:query].present?
+        @books = Book.where("LOWER(title) ~ ?", params[:query].downcase)
+        render :index
+      else
+        render json: {}
+      end
     end
 
     private
