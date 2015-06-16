@@ -21,7 +21,10 @@ ReadMe.Views.ReviewIndex = Backbone.CompositeView.extend({
     this.addSubview('ul.review-index-list', newReview);
   },
   addReviewForm: function () {
-    var addReview = new ReadMe.Views.NewReview();
+    var addReview = new ReadMe.Views.NewReview({
+      collection: this.collection,
+      model: this.model
+    });
     this.addSubview('div.new-review', addReview);
   }
 })

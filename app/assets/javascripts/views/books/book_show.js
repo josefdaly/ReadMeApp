@@ -31,7 +31,10 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
     Backbone.history.navigate("book/" + this.model.id, { trigger: true })
   },
   addReviews: function () {
-    var reviews = new ReadMe.Views.ReviewIndex({ collection: this.model.reviews() })
+    var reviews = new ReadMe.Views.ReviewIndex({
+      collection: this.model.reviews(),
+      model: this.model
+    })
     this.addSubview('div.reviews', reviews)
   }
 })

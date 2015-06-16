@@ -2,6 +2,7 @@ ReadMe.Views.NewReview = Backbone.View.extend({
   template: JST['reviews/new'],
   events: {
     // 'click div.raty img' : 'clickRaty'
+    'click button.create-review': 'createReview'
   },
   render: function () {
     var content = this.template({});
@@ -9,7 +10,7 @@ ReadMe.Views.NewReview = Backbone.View.extend({
     // var that = this;
     this.$('div.raty-new').attr('data-score', 0);
     setTimeout(function () {debugger}, 0);
-    setTimeout(this.renderRaty, 5000);
+    setTimeout(this.renderRaty, 1000);
     return this;
   },
   // clickRaty: function (event) {
@@ -30,6 +31,24 @@ ReadMe.Views.NewReview = Backbone.View.extend({
       click: function () {
         console.log('hello');
       }
+    });
+  },
+  createReview: function () {
+    event.preventDefault();
+    var title = $('.review-title').val();
+    var description = $('.review-description').val();
+    var quantitative = $('.raty-new input').val();
+    var newReview = new ReadMe.Models.Review({
+      title: title,
+      quantitative: quantitative,
+      qualitative: description,
+      author_id: window.CURRENT_USER_ID,
+      book_id: this.model.id
+    })
+    newReview.save({}, {
+      success: function () {
+        this.model.reviews().add(newReview);
+      }.bind(this)
     });
   }
 })
