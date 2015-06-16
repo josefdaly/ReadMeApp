@@ -1,5 +1,6 @@
 ReadMe.Views.ReviewIndexItem = Backbone.View.extend({
   initialize: function () {
+    debugger
     this.listenTo(this.model, 'sync', this.render)
   },
   template: JST['reviews/indexItem'],
