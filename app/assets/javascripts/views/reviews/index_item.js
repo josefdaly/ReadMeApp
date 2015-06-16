@@ -11,14 +11,14 @@ ReadMe.Views.ReviewIndexItem = Backbone.View.extend({
   render: function () {
     var content = this.template({ review: this.model })
     this.$el.html(content);
-    debugger
-    this.$('div.raty').raty({
+    this.$('div.raty-existing').raty({
       number: 5,
       score: this.model.get('quantitative'),
       readOnly: true,
       starOff: 'assets/star-off.png',
-      starOn: 'assets/star-on.png'
-    })
+      starOn: 'assets/star-on.png',
+      space: true
+    });
     return this;
   },
   redirectAuthorPage: function (event) {

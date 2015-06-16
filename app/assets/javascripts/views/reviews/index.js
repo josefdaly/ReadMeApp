@@ -8,7 +8,7 @@ ReadMe.Views.ReviewIndex = Backbone.CompositeView.extend({
     }.bind(this));
   },
   template: JST['reviews/index'],
-  tagName: 'div',
+  // tagName: 'div',
   className: 'review-index',
   render: function () {
     var content = this.template({ collection: this.collection });
