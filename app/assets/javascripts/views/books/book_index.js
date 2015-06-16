@@ -1,6 +1,6 @@
 ReadMe.Views.BookIndex = Backbone.CompositeView.extend({
   initialize: function () {
-    this.listenTo(this.collection, 'sync', this.render)
+    this.listenTo(this.collection, 'sync remove', this.render)
     this.listenTo(this.collection, 'add', this.addBook)
     this.collection.each(function (book) {
       this.addBook(book);
@@ -10,6 +10,8 @@ ReadMe.Views.BookIndex = Backbone.CompositeView.extend({
   tagName: 'div',
   className: 'book-index',
   render: function () {
+    // debugger
+    // this._subviews = {};
     var content = this.template({ collection: this.collection });
     this.$el.html(content)
     this.attachSubviews();

@@ -18,7 +18,6 @@ ReadMe.Views.BookRead = Backbone.View.extend({
       height: 600,
       spreads: false
     })
-    console.log('yo')
     this.Book.renderTo("area")
   },
   prevPage: function () {

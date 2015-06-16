@@ -18,17 +18,17 @@ ReadMe.Routers.Router = Backbone.Router.extend({
   },
 
   homePage: function () {
-    var view = new ReadMe.Views.UserShow({ model: this.current_user});
+    var view = new ReadMe.Views.UserShow({ model: this.current_user });
     this._swapView(view);
     $('.active').removeClass('active');
     $('.home-page').addClass('active');
   },
 
   bookSearch: function () {
-    var view = new ReadMe.Views.BookSearch();
+    var view = new ReadMe.Views.BookSearch({ collection: this.books });
     this._swapView(view);
     $('.active').removeClass('active');
-    $('.search').addClass('active');
+    $('a.search').addClass('active');
   },
 
   userShow: function (id) {

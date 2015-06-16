@@ -2,6 +2,21 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+div.search {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 178px;
+}
+
+div.search h4 {
+  text-align: center;
+}
+
+input.book-search {
+  margin-left: 5px;
+  margin-top: 10px;
+}
 body {
   background: #D1E0FF;
 }
