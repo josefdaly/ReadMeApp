@@ -1,4 +1,4 @@
-json.extract! book, :id, :title, :description, :created_at, :doc_url, :author_id
+json.extract! book, :id, :title, :description, :created_at, :doc_url, :author_id, :cover_url
 include_author ||= false
 if include_author
   json.author_fname book.author.fname

@@ -10,6 +10,7 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
     'click button.read':'redirectRead'
   },
   render: function () {
+    debugger
     var content = this.template({
       cover_url: "http://lorempixel.com/output/abstract-h-g-216-360-1.jpg",
       book: this.model

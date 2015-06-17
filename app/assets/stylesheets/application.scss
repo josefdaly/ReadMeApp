@@ -2,6 +2,24 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+div.new-book-form input {
+  margin-left: 205px;
+  margin-top: 10px;
+}
+
+div.new-book-form h3 {
+  text-align: center;
+}
+
+textarea.description {
+  margin-top: 10px;
+}
+
+button.create-book {
+  margin-top: 10px;
+  margin-left: 235px;
+}
+
 div.search {
   margin-left: auto;
   margin-right: auto;
@@ -116,7 +134,7 @@ div.landing {
 }
 
 li.book-index-item:hover {
-  background: #FF9999;
+  background: #E6E6E6;
 }
 
 li {
@@ -132,19 +150,28 @@ h1.welcome {
 }
 
 div.book-index {
-  background: #FFE6E6;
+  background: #A0B8E6;
   border-radius: 5px;
   display: block;
-  float: left;
-  padding: 20px;
   height: 100%;
-  overflow: visible;
+  width: 65%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+ul.book-index-list {
 }
 
 li.book-index-item {
-  background: #FFB2B2;
-  margin: 1px;
+  display: inline-block;
+  background: white;
+  margin: 10px;
+  margin-top: 10px;
   list-style-type: none;
+  padding: 10px;
+  width: 31%;
 }
 
 li.book-index-item li {

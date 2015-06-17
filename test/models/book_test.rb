@@ -9,6 +9,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  description :text
+#  cover_url   :string
 #
 
 require 'test_helper'

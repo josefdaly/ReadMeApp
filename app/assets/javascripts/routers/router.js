@@ -32,7 +32,8 @@ ReadMe.Routers.Router = Backbone.Router.extend({
   },
 
   userShow: function (id) {
-    var view = new ReadMe.Views.UserShow({ model: this.current_user });
+    var user = this.users.getOrFetch(id)
+    var view = new ReadMe.Views.UserShow({ model: user });
     this._swapView(view);
   },
 

@@ -7,7 +7,7 @@
     <h1><%= book.escape('title') %></h1>
     <h3 class="pull-right"><%= book.escape('author_fname') %> <%= book.escape('author_lname') %></h3>
   </div>
-  <div class="cover-show"><img src="http://lorempixel.com/output/food-h-g-220-324-1.jpg" /></div>
+  <div class="cover-show"><img height="300" width="200" src=<%=book.escape('cover_url')%>></div>
   <p class="book-description"><%= book.escape('description')%></p>
 </div>
 <div class="reviews"></div>

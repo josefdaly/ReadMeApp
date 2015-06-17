@@ -16,8 +16,8 @@
   <script type="text/javascript">
     window.CLOUDINARY_SETTINGS = {
       stylesheet: 'http://cloudinary.com/widget/themes/minimal.css',
-      sources: ['local'],
-      client_allowed_formats: 'epub',
+      sources: ['local', 'url'],
+      client_allowed_formats: ['jpeg', 'png', 'gif', 'epub'],
       cloud_name: "<%= ENV['cloud_name'] %>",
       upload_preset: "<%= ENV['upload_preset'] %>"
     }
