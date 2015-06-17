@@ -1,9 +1,5 @@
-<img class="cover" width="130" height="195" src=<%=book.escape('cover_url')%>>
+<img class="cover" width="200" height="300" src=<%=book.escape('cover_url')%>>
 <ul>
   <li class="raty"></li>
   <li><span><%= book.escape('title') %></span></li>
-  <% if (book.escape('author_fname')) { %>
-    <li><span><%= book.escape('author_fname') %>
-    <%= book.escape('author_lname') %></span></li>
-  <% } %>
 </ul>

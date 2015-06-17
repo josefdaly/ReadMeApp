@@ -10,6 +10,17 @@ module Api
       end
     end
 
+    def show
+      @library_item = LibraryItem.find(params[:id])
+      render :show
+    end
+
+    def destroy
+      @library_item = LibraryItem.find(params[:id])
+      @library_item.destroy
+
+      render json: {}
+    end
     private
 
     def library_item_params

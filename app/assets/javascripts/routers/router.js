@@ -1,7 +1,6 @@
 ReadMe.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    // this.currentUser = new Backbone.Model.extend({ url: '/api/current_user'})
     this.users = new ReadMe.Collections.Users();
     this.books = new ReadMe.Collections.Books();
     this.current_user = this.users.getOrFetch(window.CURRENT_USER_ID);
@@ -39,7 +38,8 @@ ReadMe.Routers.Router = Backbone.Router.extend({
 
   bookShow: function (id) {
     var book = this.books.getOrFetch(id);
-    var view = new ReadMe.Views.BookShow({ model: book });
+    var library = this.current_user.library_books();
+    var view = new ReadMe.Views.BookShow({ model: book, collection: library });
     this._swapView(view);
   },
 

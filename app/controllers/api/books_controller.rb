@@ -23,7 +23,7 @@ module Api
 
     def destroy
       @book = current_user.written_works.find(params[:id])
-      @book.destroy()
+      @book.destroy
 
       render json: {}
     end

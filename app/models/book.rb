@@ -33,4 +33,20 @@ class Book < ActiveRecord::Base
     :reviews,
     class_name: 'Review'
   )
+  has_many(
+    :library_items,
+    class_name: 'LibraryItem',
+    foreign_key: :book_id
+  )
+
+  def in_library_of?(user)
+    condition = false
+    self.library_items.each do |item|
+      if item.owner_id == user.id && item.book_id == self.id
+        condition = true
+      end
+    end
+
+    condition
+  end
 end

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
     resources :subjects, only: [:create, :show, :index]
     resources :book_subjects, only: [:create, :destroy]
-    resources :library_items, only: [:create, :destroy]
+    resources :library_items, only: [:create, :show, :destroy]
     resource :current_user, only: [:show]
   end
 end

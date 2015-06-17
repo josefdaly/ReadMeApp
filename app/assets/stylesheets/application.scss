@@ -175,8 +175,7 @@ div.book-index {
   // background: white;
   border-radius: 5px;
   display: block;
-  height: 100%;
-  width: 80%;
+  width: 1300px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -184,10 +183,25 @@ div.book-index {
 }
 
 ul.book-index-list {
+  position: relative;
+  display: block;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.library-title {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: lighter;
 }
 
 li.book-index-item img.cover {
   float: left;
+  margin-left: auto;
+  margin-right: auto;
   -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
@@ -196,8 +210,8 @@ li.book-index-item img.cover {
 
 li.book-index-item ul {
   float: left;
-  margin-left: 17px;
-  width: 50%;
+  text-align: center;
+  height: 20px;
 }
 
 li.book-index-item {
@@ -207,7 +221,7 @@ li.book-index-item {
   margin-top: 10px;
   list-style-type: none;
   padding: 10px;
-  width: 31%;
+  width: 19%;
 }
 
 li.book-index-item li {

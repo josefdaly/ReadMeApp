@@ -18,7 +18,6 @@ ReadMe.Views.BookIndexItem = Backbone.View.extend({
     Backbone.history.navigate('/books/' + this.model.id, { trigger: true })
   },
   setRaty: function () {
-    debugger
     var total = 0;
     var count = 0;
     this.model.reviews().forEach(function (review) {
