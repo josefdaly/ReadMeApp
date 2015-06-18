@@ -12,35 +12,30 @@
 <% end %>
 <form class="form-signin center-block" action="<%= action %>" method="post">
   <br>
-  <input type="text" name="user[email]" placeholder="Email"> <br>
+  <input class="center-block" type="text" name="user[email]" placeholder="Email">
   <% if header == 'Sign Up' %>
 
-    <input type="text" name="user[fname]" placeholder="John">
-     <br>
-
-    <input type="text" name="user[lname]" placeholder="Doe">
-    <br>
+    <input class="center-block" type="text" name="user[fname]" placeholder="John">
+    <input class="center-block" type="text" name="user[lname]" placeholder="Doe">
   <% end %>
-  <input type="password" name="user[password]" placeholder="Password">
+  <input class="center-block" type="password" name="user[password]" placeholder="Password">
   <br>
-  <br>
-
-  <input class="btn" type="submit" value="<%= header %>">
-</form>
+  <input class="btn btn-default center-block" type="submit" value="<%= header %>">
 <% if header == 'Sign In' %>
-  <form class="form-signin center-block" action="<%= action %>" method="post">
-    <input type="hidden" name="user[email]" value="guest">
-    <input type="hidden" name="user[password]" value="123456">
-    <input class="btn" name="name" type="submit" value="Guest Login">
-  </form>
 <% end %>
-  <div class="center-block">
-    <span class="sign-in-toggle center-block">
+</form>
       <% if header == 'Sign Up' %>
+      <span class="sign-in-toggle center-block">
         <%= link_to('Already a member?', new_session_url)%>
+      </span>
       <% elsif header == 'Sign In' %>
+        <form class="form-signin center-block" action="<%= action %>" method="post">
+          <input type="hidden" name="user[email]" value="guest">
+          <input type="hidden" name="user[password]" value="123456">
+          <input class="btn btn-default center-block" name="name" type="submit" value="Guest Login">
+        </form>
+        <span class="sign-in-toggle center-block">
         <%= link_to('New to readMe?', new_user_url) %>
+        </span>
       <% end %>
-    </span>
-  </div>
 </div>
