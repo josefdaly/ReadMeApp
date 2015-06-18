@@ -25,13 +25,20 @@
   <br>
   <br>
 
-  <input class="btn center-block" type="submit" name="name" value="<%= header %>">
-  <span class="sign-in-toggle">
-  <% if header == 'Sign Up' %>
-    <%= link_to('Already a member?', new_session_url)%>
-  <% elsif header == 'Sign In' %>
-    <%= link_to('New to readMe?', new_user_url) %>
-  <% end %>
-  </span>
+  <input class="btn center-block" type="submit" value="<%= header %>">
 </form>
+<% if header == 'Sign In' %>
+  <form action="<%= action %>" method="post">
+    <input type="hidden" name="user[email]" value="guest">
+    <input type="hidden" name="user[password]" value="123456">
+    <input class="btn center-block" name="name" type="submit" value="Guest Login">    
+  </form>
+<% end %>
+  <span class="sign-in-toggle">
+    <% if header == 'Sign Up' %>
+      <%= link_to('Already a member?', new_session_url)%>
+    <% elsif header == 'Sign In' %>
+      <%= link_to('New to readMe?', new_user_url) %>
+    <% end %>
+  </span>
 </div>
