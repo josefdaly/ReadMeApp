@@ -1,5 +1,5 @@
-<h1 class='welcome'>read<span>Me</span></h1>
-<div class="landing well well-default center-block">
+<img class="login-logo center-block" src="https://res.cloudinary.com/dik5878ak/image/upload/v1434650893/readMe-logo_rthnfc.png" alt="" />
+<div class="container ">
 
 <% action = '/users' if header == 'Sign Up'%>
 <% action = '/session' if header == 'Sign In'%>
@@ -10,7 +10,7 @@
     <% end %>
   </ul>
 <% end %>
-<form action="<%= action %>" method="post">
+<form class="form-signin center-block" action="<%= action %>" method="post">
   <br>
   <input type="text" name="user[email]" placeholder="Email"> <br>
   <% if header == 'Sign Up' %>
@@ -25,20 +25,22 @@
   <br>
   <br>
 
-  <input class="btn center-block" type="submit" value="<%= header %>">
+  <input class="btn" type="submit" value="<%= header %>">
 </form>
 <% if header == 'Sign In' %>
-  <form action="<%= action %>" method="post">
+  <form class="form-signin center-block" action="<%= action %>" method="post">
     <input type="hidden" name="user[email]" value="guest">
     <input type="hidden" name="user[password]" value="123456">
-    <input class="btn center-block" name="name" type="submit" value="Guest Login">    
+    <input class="btn" name="name" type="submit" value="Guest Login">
   </form>
 <% end %>
-  <span class="sign-in-toggle">
-    <% if header == 'Sign Up' %>
-      <%= link_to('Already a member?', new_session_url)%>
-    <% elsif header == 'Sign In' %>
-      <%= link_to('New to readMe?', new_user_url) %>
-    <% end %>
-  </span>
+  <div class="center-block">
+    <span class="sign-in-toggle center-block">
+      <% if header == 'Sign Up' %>
+        <%= link_to('Already a member?', new_session_url)%>
+      <% elsif header == 'Sign In' %>
+        <%= link_to('New to readMe?', new_user_url) %>
+      <% end %>
+    </span>
+  </div>
 </div>

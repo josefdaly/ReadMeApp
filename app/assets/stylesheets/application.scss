@@ -5,6 +5,10 @@
 h1,h2,h3 {
   font-family: serif;
 }
+
+.form-signin {
+  width: 300px;
+}
 div.new-book-form input {
   margin-left: 206px;
   margin-top: 10px;
@@ -120,19 +124,25 @@ h1.welcome span {
   text-decoration: none;
 }
 
+.sign-in-toggle {
+  font-align: center;
+  width: 300px;
+}
+
 span.tabs {
   position: absolute;
   right: 25px;
   bottom: 16px;
 }
 span.tabs a {
+  font: 'Montserrat';
   padding: 5px;
   text-decoration: none;
   padding-bottom: 15px;
 }
 nav.nav-bar {
   position: relative;
-  height: 70px;
+  height: 80px;
   width: 100%;
 }
 nav.nav-bar h1.logo {
@@ -142,9 +152,13 @@ nav.nav-bar h1.logo {
   left: 20px;
 }
 
-h1.logo span {
-  font-weight: bold
+img.login-logo {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50px;
 }
+
 
 // #main {
 //   display: block;
