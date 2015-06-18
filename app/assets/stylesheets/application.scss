@@ -18,6 +18,7 @@ h1.landing-header {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
+  font-family: 'Montserrat'
 }
 
 div.new-book-form h3 {
@@ -129,13 +130,14 @@ h1.welcome span {
   width: 300px;
 }
 
+
 span.tabs {
   position: absolute;
   right: 25px;
   bottom: 16px;
 }
 span.tabs a {
-  font: 'Montserrat';
+  font-family: 'Montserrat';
   padding: 5px;
   text-decoration: none;
   padding-bottom: 15px;
@@ -288,32 +290,47 @@ hr {
 
 
 div.reviews {
-  position: absolute;
+  float: left;
   background: #A0B8E6;
   min-height: 10%;
-  width: 55%;
-  right: 10px;
-  top: 10px;
+  min-width: 550px;
+  width: calc(100% - 690px);
+  margin-top: 10px;
+  margin-left: 10px;
   max-height: 95%;
   overflow-y: scroll;
+
 }
 
 .book-show {
-  height: 100%;
+  height: calc(100% - 80px);
+  min-width: 1400px;
 }
 
 div.book-information {
   background: #A0B8E6;
   display: block;
   float: left;
-  min-width: 550px;
-  width:40%;
   position: relative;
   padding: 20px;
   margin-left: 10px;
   margin-top: 10px;
-  min-height: 60%;
-  max-height: 90%;
+  min-height: 300px;
+}
+
+.book-information img {
+  float: left;
+}
+
+.book-information ul {
+  display: block;
+  float: left;
+  width: 280px;
+  max-height: 480px;
+  margin-left: 20px;
+  background: white;
+  padding: 10px;
+  overflow-y: scroll;
 }
 
 #carousel-example-generic {
@@ -416,7 +433,7 @@ body {
   position: absolute;
   min-width: 1300px;
   width: 100%;
-  height: calc(100% - 70px);
+  height: calc(100% - 80px);
   background: #F0F5FF;
 }
 
