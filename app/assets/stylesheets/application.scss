@@ -3,7 +3,7 @@
  @import "bootstrap";
 
 h1,h2,h3 {
-  font-family: serif;
+  font-family: 'Montserrat';
 }
 
 .form-signin {
@@ -297,7 +297,7 @@ hr {
 
 div.reviews {
   float: left;
-  background: #A0B8E6;
+  background: #D4E1E9;
   min-height: 10%;
   min-width: 550px;
   width: calc(100% - 690px);
@@ -314,7 +314,7 @@ div.reviews {
 }
 
 div.book-information {
-  background: #A0B8E6;
+  background: #D4E1E9;
   display: block;
   float: left;
   position: relative;
