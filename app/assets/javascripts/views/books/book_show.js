@@ -7,7 +7,7 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
   template: JST['books/show'],
   className: 'book-show',
   events: {
-    'click button.add-to-library': 'toggleLibrary',
+    'click button.toggle-library': 'toggleLibrary',
     'click button.read':'redirectRead'
   },
   render: function () {

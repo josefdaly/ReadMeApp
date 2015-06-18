@@ -1,7 +1,8 @@
 <div class="book-information">
   <img class="cover" width="320" height="480" src=<%=book.escape('cover_url')%>>
   <ul>
-    <li class="raty"></li>
+    <li> <button class="btn btn-xs read">Read Now</button>
+      <button class="btn btn-xs toggle-library" name="button">Add</button></li>
     <li><span class="title"><%= book.escape('title') %></span></li>
     <li>by <span class="author"><%= book.escape('author_fname')%> <%=book.escape('author_lname')%></li>
     <li><p><%= book.escape('description')%></p></li>

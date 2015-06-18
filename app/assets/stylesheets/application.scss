@@ -3,7 +3,7 @@
  @import "bootstrap";
 
 h1,h2,h3 {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', Georgia;
 }
 
 .form-signin {
@@ -240,13 +240,26 @@ li.book-index-item img.cover {
   -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+}
 
+li.book-index-item img.index-item-cover {
+  margin-left: 35px;
+  float: left;
+  -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+  box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
 }
 
 li.book-index-item ul {
   float: left;
   text-align: center;
   height: 20px;
+}
+
+
+
+li.book-index-item span {
+
 }
 
 li.book-index-item {
@@ -273,6 +286,23 @@ li.book-index-item span.title {
 }
 
 li.book-index-item p {
+  font-family: serif;
+}
+
+.book-information li {
+  margin-bottom: 8px;
+}
+
+.book-information span {
+  font-style: italic;
+  font-family: serif;
+}
+
+.book-information span.title {
+  font-size: 14pt;
+}
+
+.book-information p {
   font-family: serif;
 }
 
@@ -326,6 +356,7 @@ div.book-information {
 
 .book-information img {
   float: left;
+  box-shadow: 1px 4px 20px 2px rgba(0, 0, 0, 0.75);
 }
 
 .book-information ul {
@@ -381,13 +412,18 @@ div.new-book-form {
   position: relative;
   width: 625px;
   overflow: hidden;
-  background: #A0B8E6;
+  background: #135987;
+  border-radius: 0;
+}
+
+.new-header {
+  color: white;
+  width: 100%;
 }
 
 div.new-book-form h3 {
   // background: white;
   padding: 5px;
-  width: 220px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -418,18 +454,6 @@ div.show-buttons {
   float: right;
   position: relative;
 }
-
-button.add-to-library {
-  position: absolute;
-  right: 10px;
-}
-button.read {
-  position: absolute;
-  right: 10px;
-  top: 40px;
-}
-
-
 
 body {
   overflow: visible;
