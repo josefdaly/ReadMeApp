@@ -201,7 +201,7 @@ div.landing h3 {
 div.results {
   width: 100%;
   position: fixed;
-  top: 160px;
+  top: 159px;
   bottom: 0;
   overflow-y: scroll;
 }
@@ -328,7 +328,6 @@ hr {
 div.reviews {
   float: left;
   background: #D4E1E9;
-  min-height: 10%;
   min-width: 550px;
   width: calc(100% - 690px);
   margin-top: 10px;
