@@ -38,7 +38,8 @@ div.search {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
-  width: 178px;
+  width: 1300px;
+  border-bottom: 2px solid #d4d4d4;
 }
 
 div.search h4 {
@@ -46,8 +47,11 @@ div.search h4 {
 }
 
 input.book-search {
-  margin-left: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 10px;
+  margin-bottom: 12px;
 }
 body {
   background: #D1E0FF;
@@ -135,9 +139,11 @@ span.tabs {
   position: absolute;
   right: 25px;
   bottom: 16px;
+  color: white;
 }
 span.tabs a {
   font-family: 'Montserrat';
+  color: white;
   padding: 5px;
   text-decoration: none;
   padding-bottom: 15px;
@@ -146,6 +152,7 @@ nav.nav-bar {
   position: relative;
   height: 80px;
   width: 100%;
+  background: #135987;
 }
 nav.nav-bar h1.logo {
   position: absolute;
@@ -194,7 +201,7 @@ div.landing h3 {
 div.results {
   width: 100%;
   position: fixed;
-  top: 170px;
+  top: 160px;
   bottom: 0;
   overflow-y: scroll;
 }
@@ -218,7 +225,6 @@ div.book-index {
 ol.book-index-list {
   position: relative;
   display: block;
-  background: white;
   margin-left: auto;
   margin-right: auto;
 }

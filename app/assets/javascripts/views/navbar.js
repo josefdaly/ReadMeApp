@@ -8,9 +8,7 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
     'click .upload-doc': 'redirectNewBook',
     'click .log-out': 'logOut',
     'click .home-page': 'redirectHomePage',
-    'click .search': 'redirectBookSearch',
-    'mouseover img.logo': 'hoverGlow',
-    'mouseout img.logo': 'unGlow'
+    'click .search': 'redirectBookSearch'
   },
 
   render: function () {
@@ -39,18 +37,4 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
       }
     })
   },
-  hoverGlow: function (event) {
-    event.preventDefault();
-    $('img.logo').attr(
-      'src',
-      'http://res.cloudinary.com/dik5878ak/image/upload/v1434652341/readMe-logo_1_wublov.png'
-    )
-  },
-  unGlow: function (event) {
-    event.preventDefault();
-    $('img.logo').attr(
-      'src',
-      'https://res.cloudinary.com/dik5878ak/image/upload/v1434650893/readMe-logo_rthnfc.png'
-    )
-  }
 })
