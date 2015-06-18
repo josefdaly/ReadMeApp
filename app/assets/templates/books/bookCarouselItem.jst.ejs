@@ -1,0 +1,7 @@
+<img class="cover" width="200" height="300" src=<%=book.escape('cover_url')%>>
+<ul>
+  <li class="raty"></li>
+  <li><span class="title"><%= book.escape('title') %></span></li>
+  <li>by <span class="author"><%= book.escape('author_fname')%> <%=book.escape('author_lname')%></li>
+  <li><p><%= book.escape('description')%></p></li>
+</ul>

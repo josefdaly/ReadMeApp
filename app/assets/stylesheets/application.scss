@@ -2,9 +2,18 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+h1,h2,h3 {
+  font-family: serif;
+}
 div.new-book-form input {
-  margin-left: 205px;
+  margin-left: 206px;
   margin-top: 10px;
+}
+
+h1.landing-header {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 div.new-book-form h3 {
@@ -44,7 +53,7 @@ span.author:hover {
   color: red;
 }
 
-.active {
+.activex {
   border-bottom: solid #3399FF;
 }
 
@@ -166,6 +175,14 @@ div.landing h3 {
   text-align: center;
 }
 
+div.results {
+  width: 100%;
+  position: fixed;
+  top: 170px;
+  bottom: 0;
+  overflow-y: scroll;
+}
+
 h1.welcome {
   text-align: center;
 }
@@ -182,14 +199,12 @@ div.book-index {
   margin-top: 15px;
 }
 
-ul.book-index-list {
+ol.book-index-list {
   position: relative;
   display: block;
   background: white;
   margin-left: auto;
   margin-right: auto;
-  height: 400px;
-  overflow-y: scroll;
 }
 
 .library-title {
@@ -200,8 +215,6 @@ ul.book-index-list {
 
 li.book-index-item img.cover {
   float: left;
-  margin-left: auto;
-  margin-right: auto;
   -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
@@ -221,11 +234,24 @@ li.book-index-item {
   margin-top: 10px;
   list-style-type: none;
   padding: 10px;
-  width: 19%;
+  width: 23%;
 }
 
 li.book-index-item li {
   list-style-type: none;
+}
+
+li.book-index-item span {
+  font-style: italic;
+  font-family: serif;
+}
+
+li.book-index-item span.title {
+  font-size: 14pt;
+}
+
+li.book-index-item p {
+  font-family: serif;
 }
 
 a,ul,li,h1,h2,h3,h4,hr {
@@ -276,7 +302,36 @@ div.book-information {
   max-height: 90%;
 }
 
+#carousel-example-generic {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.carousel-inner .item {
+  margin-left: 100px;
+  width: 500px;
+}
+div.carousel-inner {
+  min-height: 400px;
+}
+div.carousel-inner li.item {
+  height: 400px;
+  cursor: pointer;
+}
 
+div.carousel-inner li.item ul {
+  margin-left: 20px;
+}
+
+div.carousel-inner li.item li {
+  width: 250px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+div.carousel-inner li.item li p {
+  width: 100%;
+}
 
 div.reviews {
 
@@ -289,6 +344,15 @@ div.new-book-form {
   position: relative;
   width: 625px;
   overflow: hidden;
+  background: #A0B8E6;
+}
+
+div.new-book-form h3 {
+  // background: white;
+  padding: 5px;
+  width: 220px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.book-info-header {

@@ -18,7 +18,7 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
   },
   redirectHomePage: function (event) {
     event.preventDefault();
-    Backbone.history.navigate("", { trigger: true })
+    Backbone.history.navigate("users/" + window.CURRENT_USER_ID, { trigger: true })
   },
   redirectNewBook: function (event) {
     event.preventDefault();

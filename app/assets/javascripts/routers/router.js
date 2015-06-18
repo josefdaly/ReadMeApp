@@ -17,23 +17,27 @@ ReadMe.Routers.Router = Backbone.Router.extend({
   },
 
   homePage: function () {
-    var view = new ReadMe.Views.UserShow({ model: this.current_user });
+    var books = this.books;
+    books.fetch();
+    var view = new ReadMe.Views.LandingPage({ collection: books });
     this._swapView(view);
-    $('.active').removeClass('active');
-    $('.home-page').addClass('active');
+    // $('.activex').removeClass('activex');
+    // $('.home-page').addClass('activex');
   },
 
   bookSearch: function () {
     var view = new ReadMe.Views.BookSearch({ collection: this.books });
     this._swapView(view);
-    $('.active').removeClass('active');
-    $('a.search').addClass('active');
+    $('.activex').removeClass('activex');
+    $('a.search').addClass('activex');
   },
 
   userShow: function (id) {
     var user = this.users.getOrFetch(id)
     var view = new ReadMe.Views.UserShow({ model: user });
     this._swapView(view);
+    $('.activex').removeClass('activex');
+    $('.home-page').addClass('activex');
   },
 
   bookShow: function (id) {
@@ -46,8 +50,8 @@ ReadMe.Routers.Router = Backbone.Router.extend({
   bookNew: function () {
     var view = new ReadMe.Views.BookNew({ model: this.current_user });
     this._swapView(view);
-    $('.active').removeClass('active');
-    $('.upload-doc').addClass('active');
+    $('.activex').removeClass('activex');
+    $('.upload-doc').addClass('activex');
   },
 
   bookRead: function (id) {
