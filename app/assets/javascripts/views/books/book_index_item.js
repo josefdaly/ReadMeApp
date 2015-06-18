@@ -30,8 +30,8 @@ ReadMe.Views.BookIndexItem = Backbone.View.extend({
       number: 5,
       score: Math.floor(total/count),
       readOnly: true,
-      starOff: 'assets/star-off.png',
-      starOn: 'assets/star-on.png',
+      starOff: 'https://res.cloudinary.com/dik5878ak/image/upload/v1434606885/star-off_gfd6ux.png',
+      starOn: 'https://res.cloudinary.com/dik5878ak/image/upload/v1434606887/star-on_oywjpp.png',
       space: true
     })
   }

@@ -21,8 +21,8 @@ ReadMe.Views.NewReview = Backbone.View.extend({
   renderRaty: function () {
     this.$('div.raty-new').raty({
       number: 5,
-      starOn: 'assets/star-on.png',
-      starOff: 'assets/star-off.png',
+      starOff: 'https://res.cloudinary.com/dik5878ak/image/upload/v1434606885/star-off_gfd6ux.png',
+      starOn: 'https://res.cloudinary.com/dik5878ak/image/upload/v1434606887/star-on_oywjpp.png',
       hints: ['bad', 'poor', 'ok', 'good', 'excellent'],
       // score: function () {
       //   return $(this).attr('data-score')
