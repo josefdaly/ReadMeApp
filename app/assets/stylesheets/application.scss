@@ -398,6 +398,7 @@ div.book-information {
 #carousel-example-generic {
   width: 100%;
   height: 100%;
+  min-height: 500px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -418,6 +419,16 @@ div.carousel-inner {
 div.carousel-inner li.item {
   height: 400px;
   cursor: pointer;
+  width: 100%;
+}
+
+.carousel-inner li.book-index-item:hover {
+  background: none;
+  cursor: pointer;
+}
+
+.carousel-inner li.item div {
+  transform: translateX(40%);
 }
 
 div.carousel-inner li.item ul {
