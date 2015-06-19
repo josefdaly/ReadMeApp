@@ -44,17 +44,19 @@ div.search {
   border-bottom: 2px solid #d4d4d4;
 }
 
-div.search h4 {
-  text-align: center;
+div.search span {
+  font-size: 33px;
+  font-family: 'Montserrat';
+  margin-left: 17px;
 }
 
-input.book-search {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 12px;
+div.search input {
+  font-size: 33px;
+  height: 69px;
+  width: calc(100% - 400px);
+  margin-left: 20px;
 }
+
 body {
   background: #D1E0FF;
 }
