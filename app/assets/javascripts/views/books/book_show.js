@@ -1,4 +1,5 @@
 ReadMe.Views.BookShow = Backbone.CompositeView.extend({
+
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.libraryItem(), 'sync destroy', this.render)
@@ -7,35 +8,39 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
   template: JST['books/show'],
   className: 'book-show',
   events: {
-    'click button.toggle-library': 'toggleLibrary',
-    'click button.read':'redirectRead'
+    'click .toggle-library': 'toggleLibrary',
+    'click .read':'redirectRead'
   },
+
   render: function () {
     var content = this.template({
-      cover_url: "http://lorempixel.com/output/abstract-h-g-216-360-1.jpg",
       book: this.model
     });
     this.$el.html(content);
     this.attachSubviews();
     return this;
   },
+
   toggleLibrary: function (event) {
     event.preventDefault();
-
-    if ($(event.currentTarget).val() === 'Add') {
+    debugger
+    if ($(event.currentTarget).val() === 'add') {
       this.model.libraryItem().set({
         book_id: this.model.id,
         owner_id: window.CURRENT_USER_ID
       })
+      debugger
       this.model.libraryItem().save();
     } else {
       this.model.libraryItem().destroy();
       this.model.libraryItem().unset('id')
     }
   },
+
   redirectRead: function (event) {
     Backbone.history.navigate("book/" + this.model.id, { trigger: true })
   },
+
   addReviews: function () {
     var reviews = new ReadMe.Views.ReviewIndex({
       collection: this.model.reviews(),
