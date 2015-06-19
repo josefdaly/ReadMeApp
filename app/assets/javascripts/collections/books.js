@@ -1,6 +1,9 @@
 ReadMe.Collections.Books = Backbone.Collection.extend({
+
   url: "/api/books",
+
   model: ReadMe.Models.Book,
+
   getOrFetch: function (id) {
     var model = this.get(id);
     var books = this;

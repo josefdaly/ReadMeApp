@@ -5,20 +5,25 @@ ReadMe.Views.BookIndexItem = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render)
     this.listenToOnce(this.model, 'sync', this.setRaty)
   },
+
   events: {
     'click': 'bookShow'
   },
+
   tagName: 'li',
-  // template: JST['books/bookCarouselItem'],
+
   className: 'book-index-item item',
+
   render: function () {
     var content = this.template({ book: this.model });
     this.$el.html(content);
     return this;
   },
+
   bookShow: function () {
     Backbone.history.navigate('/books/' + this.model.id, { trigger: true })
   },
+
   setRaty: function () {
     var total = 0;
     var count = 0;

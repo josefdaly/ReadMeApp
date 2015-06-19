@@ -1,15 +1,18 @@
 ReadMe.Views.BookNew = Backbone.View.extend({
   template: JST['books/new'],
+
   events: {
     'click button.create-book': 'createBook',
     'click input.upload-file': 'uploadFile',
     'click input.upload-cover': 'uploadCover'
   },
+
   render: function () {
     var content = this.template({ user: this.model });
     this.$el.html(content);
     return this;
   },
+
   createBook: function (event) {
     event.preventDefault();
     debugger
@@ -29,6 +32,7 @@ ReadMe.Views.BookNew = Backbone.View.extend({
       }.bind(this)
     });
   },
+
   uploadFile: function (event) {
     event.preventDefault();
     var that = this;
@@ -37,6 +41,7 @@ ReadMe.Views.BookNew = Backbone.View.extend({
       that.url = payload[0].secure_url
     });
   },
+
   uploadCover: function (event) {
     event.preventDefault();
     var that = this;

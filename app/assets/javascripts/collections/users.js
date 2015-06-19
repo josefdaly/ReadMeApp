@@ -1,6 +1,9 @@
 ReadMe.Collections.Users = Backbone.Collection.extend({
+
   urlRoot: "/users",
+
   model: ReadMe.Models.User,
+
   getOrFetch: function (id) {
     var model = this.get(id);
     var users = this;

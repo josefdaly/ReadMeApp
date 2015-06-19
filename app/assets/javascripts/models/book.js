@@ -1,5 +1,7 @@
 ReadMe.Models.Book = Backbone.Model.extend({
+
   urlRoot: "/api/books",
+
   reviews: function () {
     if (!this._reviews) {
       this._reviews = new ReadMe.Collections.Reviews([], { Book: this })
@@ -7,12 +9,14 @@ ReadMe.Models.Book = Backbone.Model.extend({
 
     return this._reviews
   },
+
   libraryItem: function () {
     if (!this._libraryItem) {
       this._libraryItem = new ReadMe.Models.LibraryItem();
     }
     return this._libraryItem
   },
+
   parse: function (response) {
     this.libraryItem().set({ book_id: response.id });
 

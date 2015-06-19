@@ -6,15 +6,20 @@ ReadMe.Views.BookIndex = Backbone.CompositeView.extend({
       this.addBook(book);
     }.bind(this));
   },
+
   template: JST['books/bookIndex'],
+
   tagName: 'div',
+
   className: 'book-index',
+
   render: function () {
     var content = this.template({ collection: this.collection });
     this.$el.html(content)
     this.attachSubviews();
     return this;
   },
+
   addBook: function (book) {
     book.fetch();
     var newBook = new ReadMe.Views.BookIndexItem({

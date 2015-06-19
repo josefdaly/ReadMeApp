@@ -52,10 +52,12 @@ div.search span {
 
 div.search input {
   font-size: 33px;
-  height: 68px;
+  height: 60px;
+  padding-left: 40px;
   width: calc(100% - 400px);
   margin-left: 20px;
-  border: none;
+  border-radius: 40px;
+  margin-top: 5px;
 }
 
 div.search input:focus {
@@ -72,7 +74,7 @@ span.author:hover {
 }
 
 .activex {
-  border-bottom: solid #3399FF;
+  border-bottom: 5px solid white;
 }
 
 hr {
@@ -193,7 +195,7 @@ li.book-index-item:hover {
 
 .nav-tabs {
   height: 70px;
-  border-bottom: 2px solid #d4d4d4;
+  border-bottom: 5px solid #d4d4d4;
   background: white;
   font-family: 'Montserrat';
   font-size: 33px;

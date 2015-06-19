@@ -1,4 +1,6 @@
 ReadMe.Collections.Reviews = Backbone.Collection.extend({
-  url: 'review',
+
+  url: 'api/reviews',
+
   model: ReadMe.Models.Review
 })

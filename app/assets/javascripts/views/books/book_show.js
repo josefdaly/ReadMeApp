@@ -5,6 +5,7 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.libraryItem(), 'sync destroy', this.render)
     this.addReviews();
   },
+  
   template: JST['books/show'],
   className: 'book-show',
   events: {

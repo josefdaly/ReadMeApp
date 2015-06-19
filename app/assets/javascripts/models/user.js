@@ -1,5 +1,7 @@
 ReadMe.Models.User = Backbone.Model.extend({
+
   urlRoot: '/users',
+
   library_books: function () {
     if (!this._library_books) {
       this._library_books = new ReadMe.Collections.Books([], { User: this })
@@ -7,6 +9,7 @@ ReadMe.Models.User = Backbone.Model.extend({
 
     return this._library_books;
   },
+
   written_works: function () {
     if (!this._written_works) {
       this._written_works = new ReadMe.Collections.Books([], { User: this })
@@ -14,6 +17,7 @@ ReadMe.Models.User = Backbone.Model.extend({
 
     return this._written_works;
   },
+
   parse: function (response) {
 
     if (response.written_works) {
