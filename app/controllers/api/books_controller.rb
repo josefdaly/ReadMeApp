@@ -33,7 +33,7 @@ module Api
         @books = Book.where("LOWER(title) ~ ?", params[:query].downcase)
         render :index
       else
-        render json: {}
+        render json: []
       end
     end
 
