@@ -176,6 +176,7 @@ nav.nav-bar {
   height: 80px;
   width: 100%;
   background: #135987;
+  min-width: 750px;
 }
 nav.nav-bar h1.logo {
   position: absolute;
@@ -505,7 +506,7 @@ body {
 
 #main {
   position: absolute;
-  min-width: 1300px;
+  min-width: 750px;
   width: 100%;
   height: calc(100% - 80px);
   background: #F0F5FF;
