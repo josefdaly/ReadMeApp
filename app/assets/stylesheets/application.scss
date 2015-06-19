@@ -21,6 +21,7 @@ h1.landing-header {
   font-family: 'Montserrat'
 }
 
+
 div.new-book-form h3 {
   text-align: center;
 }
@@ -37,8 +38,9 @@ button.create-book {
 div.search {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
-  width: 1300px;
+  background: white;
+  height: 70px;
+  width: 100%;
   border-bottom: 2px solid #d4d4d4;
 }
 
@@ -168,12 +170,6 @@ img.login-logo {
   top: 30px;
 }
 
-
-// #main {
-//   display: block;
-//   background: #F0F5FF;
-//   height: 100%;
-// }
 div.landing {
   display: block;
   width: 215px;
@@ -181,13 +177,19 @@ div.landing {
   margin-right: auto;
   padding-top: 0px;
   position: relative;
-  // margin-top: 0px;
-  // top: 50%;
-  // transform: translateY(70px);
 }
 
 li.book-index-item:hover {
   background: #E6E6E6;
+  cursor: pointer;
+}
+
+.nav-tabs {
+  height: 70px;
+  border-bottom: 2px solid #d4d4d4;
+  background: white;
+  font-family: 'Montserrat';
+  font-size: 33px;
 }
 
 li {
@@ -198,10 +200,10 @@ div.landing h3 {
   text-align: center;
 }
 
-div.results {
+div.library-books,div.written-works,div.results {
   width: 100%;
   position: fixed;
-  top: 159px;
+  top: 150px;
   bottom: 0;
   overflow-y: scroll;
 }
