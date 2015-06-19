@@ -15,6 +15,8 @@ ReadMe.Views.LandingPage = Backbone.CompositeView.extend({
     'click .left' : 'clickLeft'
   },
 
+  className: 'landing-page',
+
   clickRight: function () {
     $('.carousel').carousel('next')
   },

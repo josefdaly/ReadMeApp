@@ -3,8 +3,8 @@ ReadMe.Views.BookNew = Backbone.View.extend({
 
   events: {
     'click button.create-book': 'createBook',
-    'click input.upload-file': 'uploadFile',
-    'click input.upload-cover': 'uploadCover'
+    'click button.upload-file': 'uploadFile',
+    'click button.upload-cover': 'uploadCover'
   },
 
   render: function () {
@@ -15,7 +15,6 @@ ReadMe.Views.BookNew = Backbone.View.extend({
 
   createBook: function (event) {
     event.preventDefault();
-    debugger
     var title = $('.book-title').val();
     var description = $('.description').val();
     var newBook = new ReadMe.Models.Book({
@@ -36,19 +35,22 @@ ReadMe.Views.BookNew = Backbone.View.extend({
   uploadFile: function (event) {
     event.preventDefault();
     var that = this;
-    cloudinary.openUploadWidget(CLOUDINARY_SETTINGS, function (error, payload) {
-      $('.upload-file').val(payload[0].original_filename);
-      that.url = payload[0].secure_url
-    });
+    cloudinary.openUploadWidget(window.CLOUDINARY_SETTINGS_BOOK,
+      function (error, payload) {
+        $('.book-file-name').html(payload[0].original_filename);
+        that.url = payload[0].secure_url
+      }
+    );
   },
 
   uploadCover: function (event) {
     event.preventDefault();
     var that = this;
-    cloudinary.openUploadWidget(CLOUDINARY_SETTINGS, function (error, payload) {
-      $('.upload-cover').val(payload[0].original_filename);
-      debugger
-      that.cover_url = payload[0].secure_url
-    });
+    cloudinary.openUploadWidget(window.CLOUDINARY_SETTINGS_COVER,
+      function (error, payload) {
+        $('.cover-file-name').html(payload[0].original_filename);
+        that.cover_url = payload[0].secure_url
+      }
+    );
   }
 })
