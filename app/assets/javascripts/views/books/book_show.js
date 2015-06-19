@@ -34,6 +34,7 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
     } else {
       this.model.libraryItem().destroy();
       this.model.libraryItem().unset('id')
+      this.collection.remove(this.model);
     }
   },
 
