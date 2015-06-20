@@ -519,12 +519,13 @@ body {
 
           #area {
             width: 100%;
-            height: calc(100% - 26px);
+            height: calc(100% - 8px);
             margin-left: auto;
             margin-right: auto;
             max-width: 1250px;
             background: white;
             padding: 40px;
+            padding-top: 0px;
 
           }
           #area iframe {
@@ -558,9 +559,8 @@ body {
           }
 
 div.book-status-bar {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
+  width: 100%;
+  padding: 10px;
 }
 
 div.book-status-bar span {
