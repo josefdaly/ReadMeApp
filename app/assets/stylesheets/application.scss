@@ -276,12 +276,12 @@ li.book-index-item img.index-item-cover {
 
 li.book-index-item ul {
   float: left;
-  text-align: center;
+  // text-align: center;
   height: 20px;
 }
 
 ol.book-index-list li.book-index-item ul {
-  transform: translateX(90%);
+  // transform: translateX(90%);
 }
 
 
@@ -429,7 +429,7 @@ div.carousel-inner li.item {
 }
 
 .carousel-inner li.item div {
-  transform: translateX(40%);
+  transform: translateX(35%);
 }
 
 div.carousel-inner li.item ul {
@@ -536,6 +536,7 @@ body {
           }
           #next {
             right: 40px;
+
           }
           .arrow {
             position: absolute;
