@@ -44,7 +44,6 @@ ReadMe.Views.LandingPage = Backbone.CompositeView.extend({
       template: JST['books/bookCarouselItem'],
       className: className
     });
-    // var newBook = new ReadMe.Views.BookIndexItem({ model: book });
     this.addSubview('.book-index-list', newBook)
   }
 });

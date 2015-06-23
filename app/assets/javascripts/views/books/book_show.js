@@ -1,5 +1,4 @@
 ReadMe.Views.BookShow = Backbone.CompositeView.extend({
-
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.libraryItem(), 'sync destroy', this.render)
@@ -7,7 +6,9 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
   },
 
   template: JST['books/show'],
+
   className: 'book-show',
+  
   events: {
     'click .toggle-library': 'toggleLibrary',
     'click .read':'redirectRead'

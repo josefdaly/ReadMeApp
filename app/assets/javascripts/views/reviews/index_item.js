@@ -2,12 +2,17 @@ ReadMe.Views.ReviewIndexItem = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render)
   },
+
   template: JST['reviews/indexItem'],
+
   events: {
     'click span.author': 'redirectAuthorPage'
   },
+
   tagName: 'li',
+
   className: 'review-index-item',
+
   render: function () {
     var content = this.template({ review: this.model })
     this.$el.html(content);
@@ -21,6 +26,7 @@ ReadMe.Views.ReviewIndexItem = Backbone.View.extend({
     });
     return this;
   },
+
   redirectAuthorPage: function (event) {
     event.preventDefault();
     var author_id = $(event.currentTarget).attr('data');

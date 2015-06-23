@@ -25,7 +25,8 @@ ReadMe.Models.User = Backbone.Model.extend({
       delete response.written_words;
     }
     if (response.library_books) {
-      this.library_books().set(response.library_books, {parse: true})
+      this.library_books().set(response.library_books, {parse: true});
+      delete response.library_books;
     }
 
     return response;

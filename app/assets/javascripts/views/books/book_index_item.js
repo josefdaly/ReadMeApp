@@ -1,6 +1,5 @@
 ReadMe.Views.BookIndexItem = Backbone.View.extend({
   initialize: function (options) {
-    // debugger;
     this.template = options.template
     this.listenTo(this.model, 'sync', this.render)
     this.listenToOnce(this.model, 'sync', this.setRaty)

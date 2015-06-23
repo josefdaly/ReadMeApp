@@ -1,7 +1,6 @@
 ReadMe.Views.NewReview = Backbone.View.extend({
   template: JST['reviews/new'],
   events: {
-    // 'click div.raty img' : 'clickRaty'
     'click button.create-review': 'createReview'
   },
   render: function () {
@@ -12,26 +11,19 @@ ReadMe.Views.NewReview = Backbone.View.extend({
     setTimeout(this.renderRaty, 1000);
     return this;
   },
-  // clickRaty: function (event) {
-  //   event.preventDefault();
-  //   var newScore = $(event.currentTarget).attr('alt');
-  //   this.$('div.raty').attr('data-score', newScore);
-  //   this.renderRaty();
-  // },
+
   renderRaty: function () {
     this.$('div.raty-new').raty({
       number: 5,
       starOff: 'https://res.cloudinary.com/dik5878ak/image/upload/v1434606885/star-off_gfd6ux.png',
       starOn: 'https://res.cloudinary.com/dik5878ak/image/upload/v1434606887/star-on_oywjpp.png',
       hints: ['bad', 'poor', 'ok', 'good', 'excellent'],
-      // score: function () {
-      //   return $(this).attr('data-score')
-      // },
       click: function () {
         console.log('hello');
       }
     });
   },
+  
   createReview: function () {
     event.preventDefault();
     var title = $('.review-title').val();

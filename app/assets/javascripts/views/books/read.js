@@ -12,7 +12,8 @@ ReadMe.Views.BookRead = Backbone.View.extend({
     'click div#next': 'nextPage',
     'click .plus': 'fontUp',
     'click .minus': 'fontDown',
-    'click .style': 'toggleFont'
+    'click .style': 'toggleFont',
+    // 'click button.page-num':
   },
 
   className: 'read-page',
@@ -26,6 +27,9 @@ ReadMe.Views.BookRead = Backbone.View.extend({
   startBook: function () {
     this.Book = ePub(this.model.get('doc_url'))
     this.Book.renderTo("area")
+    var that = this;
+    this.Book.on("book:ready", function (that) {debugger})
+    debugger;
   },
 
   prevPage: function () {

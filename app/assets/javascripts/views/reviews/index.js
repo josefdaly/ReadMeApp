@@ -7,9 +7,11 @@ ReadMe.Views.ReviewIndex = Backbone.CompositeView.extend({
       this.addReview(review);
     }.bind(this));
   },
+
   template: JST['reviews/index'],
-  // tagName: 'div',
+
   className: 'review-index',
+
   render: function () {
     var content = this.template({ collection: this.collection });
 
@@ -17,10 +19,12 @@ ReadMe.Views.ReviewIndex = Backbone.CompositeView.extend({
     this.attachSubviews();
     return this;
   },
+
   addReview: function (review) {
     var newReview = new ReadMe.Views.ReviewIndexItem({ model: review });
     this.addSubview('ul.review-index-list', newReview);
   },
+
   addReviewForm: function () {
     var addReview = new ReadMe.Views.NewReview({
       collection: this.collection,
