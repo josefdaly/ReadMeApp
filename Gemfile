@@ -13,6 +13,7 @@ gem 'bcrypt'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'backbone-on-rails'
 gem 'figaro'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'annotate'
