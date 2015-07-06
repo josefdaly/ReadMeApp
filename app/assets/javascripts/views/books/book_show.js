@@ -8,7 +8,7 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
   template: JST['books/show'],
 
   className: 'book-show',
-  
+
   events: {
     'click .toggle-library': 'toggleLibrary',
     'click .read':'redirectRead'
@@ -37,10 +37,6 @@ ReadMe.Views.BookShow = Backbone.CompositeView.extend({
       this.model.libraryItem().destroy();
       this.model.libraryItem().unset('id')
       this.collection.remove(this.model);
-      Backbone.history.navigate(
-        'users/' + window.CURRENT_USER_ID,
-        { trigger: true }
-      )
     }
   },
 

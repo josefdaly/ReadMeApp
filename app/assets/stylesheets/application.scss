@@ -402,6 +402,7 @@ div.book-information {
   min-height: 500px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 .landing-page {
@@ -532,17 +533,17 @@ body {
             border: none;
           }
           #prev {
-            left: 40px;
+            left: 10px;
           }
           #next {
-            right: 40px;
+            right: 10px;
 
           }
           .arrow {
             position: absolute;
-            top: 50%;
+            top: 35%;
             margin-top: -32px;
-            font-size: 64px;
+            font-size: 150px;
             color: #969696;
             font-family: arial, sans-serif;
             font-weight: bold;
@@ -558,6 +559,17 @@ body {
           .arrow:active {
             color: #000;
           }
+
+.destroy-book {
+  float: right;
+  color: black;
+  font-family: arial;
+  font-weight: bold;
+  cursor: pointer;
+}
+.destroy-book:hover {
+  color: red;
+}
 
 div.book-status-bar {
   width: 100%;
