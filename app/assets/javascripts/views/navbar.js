@@ -6,7 +6,7 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
   template: JST['navbar'],
 
   events: {
-    'click .upload-doc': 'redirectNewBook',
+    // 'click .upload-doc': 'redirectNewBook',
     'click .log-out': 'logOut',
     'click .home-page': 'redirectHomePage',
     'click .search': 'redirectBookSearch'

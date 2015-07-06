@@ -3,8 +3,29 @@
   <a href="#"> <img class="logo" height="85" width="213" src="https://res.cloudinary.com/dik5878ak/image/upload/v1434664231/readMe-logo_2_gvndnc.png" alt="logo" /> </a>
   <span class="tabs pull-right">
     <a class="home-page">Your Books</a>
-    | <a class="upload-doc">Upload Book</a>
+    | <a class="upload-doc" data-toggle="modal" data-target="#myModal">Upload Book</a>
     | <a class="search">Book Search</a>
     | <a class="log-out">Log Out</a>
   </span>
 </nav>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
