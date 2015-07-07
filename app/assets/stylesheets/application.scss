@@ -1,6 +1,27 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.link-book-show-hidden {
+  display: none;
+}
+
+.link-book-show {
+  position: absolute;
+  left: 71px;
+  top: 200px;
+  color: white;
+}
+
+.link-book-show:hover {
+  color: #B2B2B2;
+}
+
+.link-book-show span {
+  font-family: 'Montserrat';
+  font-size: 30px;
+}
+
 .open-book-hidden {
   display: none;
 }
@@ -12,6 +33,7 @@
   height: 150px;
   width: 150px;
   left: 70px;
+  top: 50px;
 }
 
 .open-book:hover {
@@ -300,6 +322,7 @@ li.book-index-item img.index-item-cover {
 
 li.book-index-item ul {
   float: left;
+  margin-left: 85px;
   // text-align: center;
   height: 20px;
 }
@@ -328,7 +351,7 @@ li.book-index-item li {
   list-style-type: none;
 }
 
-li.book-index-item span {
+li.book-index-item span.book-title {
   font-style: italic;
   font-family: serif;
 }
