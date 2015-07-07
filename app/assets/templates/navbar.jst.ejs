@@ -3,8 +3,8 @@
   <a href="#"> <img class="logo" height="85" width="213" src="https://res.cloudinary.com/dik5878ak/image/upload/v1434664231/readMe-logo_2_gvndnc.png" alt="logo" /> </a>
   <span class="tabs pull-right">
     <a class="home-page">Your Books</a>
-    | <a class="upload-doc" data-toggle="modal" data-target="#myModal">Upload Book</a>
     | <a class="search">Book Search</a>
+    | <a class="upload-doc" data-toggle="modal" data-target="#myModal">Upload Book</a>
     | <a class="log-out">Log Out</a>
   </span>
 </nav>
@@ -17,13 +17,36 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Upload a Book</h4>
       </div>
+
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <div class="form-group">
+          <input class="form-control book-title" placeholder="Book Title">
+        </div>
+
+        <div class="form-group">
+          <textarea class="form-control description" placeholder="Book Description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputFile">Book File</label> <br>
+          <button class="upload-file" type='file'>Choose File</button>
+          <span class="book-file-name">No file chosen</span>
+          <p class="help-block">At this time, readMe only supports .epub files</p>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputFile">Cover Image</label> <br>
+          <button class="upload-cover" type='file'>Choose File</button>
+          <span class="cover-file-name">No file chosen</span>
+          <p class="help-block">readMe supports .jpg, .png, and .gif files</p>
+        </div>
       </div>
+
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" data-dismiss="modal"
+          class="center-block create-book btn btn-default">Submit</button>
       </div>
     </div>
 
