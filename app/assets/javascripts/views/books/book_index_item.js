@@ -6,7 +6,9 @@ ReadMe.Views.BookIndexItem = Backbone.View.extend({
   },
 
   events: {
-    'click': 'bookShow'
+    'click .open-book': 'bookShow',
+    'mouseover': 'showIcon',
+    'mouseout': 'hideIcon'
   },
 
   tagName: 'li',
@@ -19,8 +21,20 @@ ReadMe.Views.BookIndexItem = Backbone.View.extend({
     return this;
   },
 
+  showIcon: function () {
+    $readIcon = this.$('.open-book-hidden')
+    $readIcon.removeClass('open-book-hidden')
+    $readIcon.addClass('open-book')
+  },
+
+  hideIcon: function () {
+    $readIcon = this.$('.open-book')
+    $readIcon.removeClass('open-book')
+    $readIcon.addClass('open-book-hidden')
+  },
+
   bookShow: function () {
-    Backbone.history.navigate('/books/' + this.model.id, { trigger: true })
+    Backbone.history.navigate('/book/' + this.model.id, { trigger: true })
   },
 
   setRaty: function () {

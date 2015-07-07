@@ -1,6 +1,22 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+.open-book-hidden {
+  display: none;
+}
+
+.open-book {
+  background-image: url('https://res.cloudinary.com/dik5878ak/image/upload/c_scale,w_166/v1436247033/Open-Book-icon_ykaqpv.png');
+  background-size: cover;
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  left: 70px;
+}
+
+.open-book:hover {
+  background-image: url('https://res.cloudinary.com/dik5878ak/image/upload/v1436247822/Open-Book-icon-gray_ojv4kr.png');
+}
 
 .new-form {
   margin-top: 30px;
@@ -298,6 +314,7 @@ li.book-index-item span {
 }
 
 li.book-index-item {
+  position: relative;
   display: inline-block;
   // background: white;
   margin: 10px;
