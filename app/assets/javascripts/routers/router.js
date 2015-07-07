@@ -1,9 +1,9 @@
 ReadMe.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    this.users = new ReadMe.Collections.Users();
-    this.books = new ReadMe.Collections.Books();
-    this.current_user = this.users.getOrFetch(window.CURRENT_USER_ID);
+    this.users = options.users;
+    this.books = options.books;
+    this.current_user = options.current_user;
   },
 
   routes: {

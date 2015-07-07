@@ -1,12 +1,12 @@
 ReadMe.Views.NavBar = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.router = options.router
+    this.model = options.model
   },
 
   template: JST['navbar'],
 
   events: {
-    // 'click .upload-doc': 'redirectNewBook',
     'click .log-out': 'logOut',
     'click .home-page': 'redirectHomePage',
     'click .search': 'redirectBookSearch',
@@ -60,8 +60,16 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
     newBook.save({}, {
       success: function () {
         this.model.written_works().add(newBook);
-        Backbone.history.navigate("", { trigger: true });
-      }.bind(this)
+        console.log('WHAT!');
+        $('.book-title').val("");
+        $('.description').val("");
+        $('.book-file-name').html('No file chosen');
+        $('.cover-file-name').html('No file chosen');
+        $('#myModal').modal('toggle');
+      }.bind(this),
+      error: function(model, response) {
+        console.log(response.responseText);
+      }
     });
   },
 
