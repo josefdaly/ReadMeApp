@@ -10,6 +10,7 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
     'click .log-out': 'logOut',
     'click .home-page': 'redirectHomePage',
     'click .search': 'redirectBookSearch',
+    'click .upload-doc': 'clearErrors',
     'click button.create-book': 'createBook',
     'click button.upload-file': 'uploadFile',
     'click button.upload-cover': 'uploadCover'
@@ -68,9 +69,23 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
         $('#myModal').modal('toggle');
       }.bind(this),
       error: function(model, response) {
-        console.log(response.responseText);
+        response.responseJSON.forEach(function(msg){
+          if (msg === "Title can't be blank") {
+            $('.title-error').html('Your book must have a title');
+            console.log(msg);
+          }
+          if (msg === "Doc url can't be blank") {
+            $('.doc-url-error').html('You must select an epub to upload');
+            console.log(msg);
+          }
+        });
       }
     });
+  },
+
+  clearErrors: function () {
+    $('.title-error').html('');
+    $('.doc-url-error').html('');
   },
 
   uploadFile: function (event) {

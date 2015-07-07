@@ -24,7 +24,9 @@ ReadMe.Routers.Router = Backbone.Router.extend({
   },
 
   bookSearch: function () {
-    var view = new ReadMe.Views.BookSearch({ collection: this.books });
+    var view = new ReadMe.Views.BookSearch({
+      collection: new ReadMe.Collections.Books()
+    });
     this._swapView(view);
     $('.activex').removeClass('activex');
     $('a.search').addClass('activex');
