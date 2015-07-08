@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
     num_rands.times do  |i|
       rand_id = ((rand * User.all.count) + 1).to_i
-      until User.all.pluck(:id).include?(rand_id)
+      until User.all.pluck(:id).include?(rand_id) && User.find(rand_id).written_works.count > 3
         rand_id = ((rand * User.all.count) + 1).to_i
       end
       rands << rand_id
