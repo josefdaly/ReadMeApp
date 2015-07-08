@@ -30,6 +30,10 @@ ReadMe.Views.BookIndexItem = Backbone.View.extend({
     $viewIcon = this.$('.link-book-show-hidden')
     $viewIcon.removeClass('link-book-show-hidden')
     $viewIcon.addClass('link-book-show')
+
+    $cover = this.$('.index-item-cover')
+    $cover.removeClass('index-item-cover')
+    $cover.addClass('index-item-cover-hover')
   },
 
   hideIcon: function () {
@@ -40,6 +44,10 @@ ReadMe.Views.BookIndexItem = Backbone.View.extend({
     $viewIcon = this.$('.link-book-show')
     $viewIcon.removeClass('link-book-show')
     $viewIcon.addClass('link-book-show-hidden')
+
+    $cover = this.$('.index-item-cover-hover')
+    $cover.removeClass('index-item-cover-hover')
+    $cover.addClass('index-item-cover')
   },
 
   bookRead: function () {

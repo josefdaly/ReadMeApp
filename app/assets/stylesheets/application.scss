@@ -30,10 +30,10 @@
   background-image: url('https://res.cloudinary.com/dik5878ak/image/upload/c_scale,w_166/v1436247033/Open-Book-icon_ykaqpv.png');
   background-size: cover;
   position: absolute;
-  height: 150px;
-  width: 150px;
-  left: 70px;
-  top: 50px;
+  height: 100px;
+  width: 100px;
+  left: 95px;
+  top: 70px;
 }
 
 .open-book:hover {
@@ -248,7 +248,7 @@ div.landing {
 }
 
 li.book-index-item:hover {
-  background: #E6E6E6;
+  // background: #E6E6E6;
   cursor: pointer;
 }
 
@@ -315,6 +315,15 @@ li.book-index-item img.cover {
 li.book-index-item img.index-item-cover {
   margin-left: 35px;
   float: left;
+  -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+  box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+}
+
+li.book-index-item img.index-item-cover-hover {
+  margin-left: 35px;
+  float: left;
+  opacity: .4;
   -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
