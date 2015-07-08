@@ -13,7 +13,7 @@ ReadMe.Views.BookRead = Backbone.View.extend({
     'click .plus': 'fontUp',
     'click .minus': 'fontDown',
     'click .style': 'toggleFont',
-    // 'click button.page-num':
+    'click .back-to-show': 'redirectBack'
   },
 
   className: 'read-page',
@@ -22,6 +22,10 @@ ReadMe.Views.BookRead = Backbone.View.extend({
     var content = this.template()
     this.$el.html(content);
     return this
+  },
+
+  redirectBack: function () {
+    Backbone.history.navigate('books/' + this.model.get('id'), { trigger: true })
   },
 
   startBook: function () {
