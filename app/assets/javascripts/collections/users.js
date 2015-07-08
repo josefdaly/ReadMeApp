@@ -1,6 +1,6 @@
 ReadMe.Collections.Users = Backbone.Collection.extend({
 
-  urlRoot: "/users",
+  url: "/users",
 
   model: ReadMe.Models.User,
 

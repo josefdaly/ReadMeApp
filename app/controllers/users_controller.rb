@@ -22,6 +22,25 @@ class UsersController < ApplicationController
     render 'show.json.jbuilder'
   end
 
+  # 3 random users for landing page
+  def index
+    num_rands = 3
+    rands = []
+    num_records = User.all.count
+
+    num_rands.times do  |i|
+      rand_id = ((rand * User.all.count) + 1).to_i
+      until User.all.pluck(:id).include?(rand_id)
+        rand_id = ((rand * User.all.count) + 1).to_i
+      end
+      rands << rand_id
+    end
+
+    @users = User.find(rands.split)
+
+    render 'index.json.jbuilder'
+  end
+
   private
 
   def user_params
