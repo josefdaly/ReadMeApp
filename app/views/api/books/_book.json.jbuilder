@@ -11,8 +11,9 @@ if include_author
 end
 include_subjects ||= false
 if include_subjects
-  json.subjects(book.subjects).each do |subject|
-    json.subject subject.title
+  json.subjects book.subjects.each do |subject|
+    json.subject_title subject.title
+    json.subject_id subject.id
   end
 end
 include_reviews ||= false

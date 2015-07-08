@@ -2,6 +2,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.btn:focus {
+  outline: none;
+}
 .link-book-show-hidden {
   display: none;
 }
@@ -15,6 +18,7 @@
 
 .link-book-show:hover {
   color: #B2B2B2;
+  cursor: pointer;
 }
 
 .link-book-show span {
@@ -37,6 +41,7 @@
 }
 
 .open-book:hover {
+  cursor: pointer;
   background-image: url('https://res.cloudinary.com/dik5878ak/image/upload/v1436247822/Open-Book-icon-gray_ojv4kr.png');
 }
 
@@ -249,7 +254,7 @@ div.landing {
 
 li.book-index-item:hover {
   // background: #E6E6E6;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .nav-tabs {
@@ -323,7 +328,7 @@ li.book-index-item img.index-item-cover {
 li.book-index-item img.index-item-cover-hover {
   margin-left: 35px;
   float: left;
-  opacity: .2;
+  opacity: .7;
   -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
@@ -484,7 +489,6 @@ div.carousel-inner li.item {
 
 .carousel-inner li.book-index-item:hover {
   background: none;
-  cursor: pointer;
 }
 
 .carousel-inner li.item div {
