@@ -30,17 +30,26 @@ module Api
 
     def search
       if params[:query].present?
+        # search for title
         # @books = Book.where("LOWER(title) ~ ?", params[:query].downcase)
+
+        # search by title and author name
         @books = Book.joins(:author).where(
           "LOWER(books.title) ~ ? OR LOWER(users.fname || ' ' || users.lname) ~ ?",
           params[:query].downcase,
           params[:query].downcase
         )
-        
+
         render :index
       else
         render json: []
       end
+    end
+
+    def recent
+      @books = Book.last(4)
+
+      render :index
     end
 
     private

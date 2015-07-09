@@ -19,7 +19,7 @@ ReadMe.Routers.Router = Backbone.Router.extend({
   homePage: function () {
     var users = this.users;
     users.fetch();
-    var view = new ReadMe.Views.LandingPage({ collection: users });
+    var view = new ReadMe.Views.LandingPage({ users: users });
     this._swapView(view);
   },
 

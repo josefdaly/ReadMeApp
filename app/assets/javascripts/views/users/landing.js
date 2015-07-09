@@ -1,9 +1,13 @@
 ReadMe.Views.LandingPage = Backbone.CompositeView.extend({
 
-  initialize: function () {
-    this.listenTo(this.collection, 'sync', this.render);
-    this.listenTo(this.collection, 'add', this.addBookIndex);
-    this.collection.each(function (user) {
+  initialize: function (options) {
+    this.recentAdds = new ReadMe.Collections.Books();
+    this.recentAdds.fetch({ url: 'api/books/recent' })
+    this.addRecents()
+    this.users = options.users
+    this.listenTo(this.users, 'sync', this.render);
+    this.listenTo(this.users, 'add', this.addBookIndex);
+    this.users.each(function (user) {
       this.addBookIndex(user);
     }.bind(this));
   },
@@ -28,5 +32,12 @@ ReadMe.Views.LandingPage = Backbone.CompositeView.extend({
       collection: user.written_works()
     })
     this.addSubview('div.book-indices', view)
+  },
+
+  addRecents: function () {
+    var view = new ReadMe.Views.BookIndex({
+      collection: this.recentAdds
+    })
+    this.addSubview('div.recently-added', view)
   }
 });
