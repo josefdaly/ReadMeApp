@@ -25,19 +25,30 @@ class UsersController < ApplicationController
   # 3 random users for landing page
   def index
     num_rands = 3
-    rands = []
-    num_records = User.all.count
-
-    num_rands.times do  |i|
-      rand_id = ((rand * User.all.count) + 1).to_i
-      until User.all.pluck(:id).include?(rand_id) && rand_id != current_user.id
-        rand_id = ((rand * User.all.count) + 1).to_i
-      end
-      rands << rand_id
+    id_arr = []
+    sample_id_arr = []
+    User.all.each do |user|
+      id_arr << user.id
     end
-
-    @users = User.find(rands.split)
-
+    id_arr.delete(current_user.id)
+    num_rands.times do |i|
+      rand_index = (rand * id_arr.length).to_i
+      sample_id_arr << id_arr[rand_index]
+      id_arr.delete_at(rand_index)
+    end
+    # rands = []
+    # num_records = User.all.count
+    #
+    # num_rands.times do  |i|
+    #   rand_id = ((rand * User.all.count) + 1).to_i
+    #   debugger
+    #   until User.all.pluck(:id).include?(rand_id) && rand_id != current_user.id
+    #     rand_id = ((rand * User.all.count) + 1).to_i
+    #   end
+    #   rands << rand_id
+    # end
+    #
+    @users = User.find(sample_id_arr.split)
     render 'index.json.jbuilder'
   end
 
