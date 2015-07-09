@@ -49,7 +49,7 @@ module Api
     def recent
       @books = Book.last(4)
 
-      render json: {}
+      render :index
     end
 
     private
