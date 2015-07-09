@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     #   rands << rand_id
     # end
     #
-    @users = User.find(sample_id_arr.split)
+    @users = User.find(sample_id_arr.split).shuffle!
     render 'index.json.jbuilder'
   end
 
