@@ -80,13 +80,18 @@ div.new-book-form input {
   margin-top: 10px;
 }
 
-h1.landing-header {
+.landing-header {
   text-align: center;
   // margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 40px;
   margin-bottom: 10px;
   font-family: 'Montserrat'
+}
+
+.landing-sub-header {
+  text-align: center;
+
 }
 
 
@@ -469,7 +474,12 @@ div.book-information {
 }
 
 .landing-page {
-  height: calc(100% - 80px);
+  // height: calc(100% - 80px);
+  width: 100%;
+  position: fixed;
+  top: 80px;
+  bottom: 0;
+  overflow-y: scroll;
 }
 
 div.carousel-inner .active {

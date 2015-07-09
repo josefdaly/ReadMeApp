@@ -52,6 +52,25 @@ module Api
       render :index
     end
 
+    def featured
+      id_arr = []
+      sample_id_arr = []
+      Book.all.each do |book|
+        id_arr << book.id
+      end
+      current_user.written_works.each do |book|
+        id_arr.delete(book.id)
+      end
+      8.times do |i|
+        rand_index = (rand * id_arr.length).to_i
+        sample_id_arr << id_arr[rand_index]
+        id_arr.delete_at(rand_index)
+      end
+
+      @books = Book.find(sample_id_arr.split).shuffle!
+      render :index
+    end
+
     private
 
     def book_params

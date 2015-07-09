@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   # 3 random users for landing page
+
   def index
     num_rands = 3
     id_arr = []
