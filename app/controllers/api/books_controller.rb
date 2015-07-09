@@ -30,7 +30,8 @@ module Api
 
     def search
       if params[:query].present?
-        @books = Book.where("LOWER(title) ~ ?", params[:query].downcase)
+        # @books = Book.where("LOWER(title) ~ ?", params[:query].downcase)
+        @books = Book.joins(:author).where("LOWER(books.title) ~ ? OR LOWER(users.fname || ' ' || users.lname) ~ ?", params[:query].downcase, params[:query].downcase)
         render :index
       else
         render json: []
