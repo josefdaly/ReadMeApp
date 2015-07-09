@@ -10,7 +10,7 @@
           <% } %>
         </li>
         <li><span class="title"><%= book.escape('title') %></span></li>
-        <li>by <span class="author"><%= book.escape('author_fname')%> <%=book.escape('author_lname')%></li>
+        <li>by <span class="author"> <a href="#/users/<%= book.escape('author_id') %>" > <%= book.escape('author_fname')%> <%=book.escape('author_lname')%> </a></span></li>
         <li><p><%= book.escape('description')%></p></li>
       </ul>
     </div>
