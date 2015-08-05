@@ -323,7 +323,7 @@ li.book-index-item img.cover {
 }
 
 li.book-index-item img.index-item-cover {
-  margin-left: 35px;
+  // margin-left: 35px;
   float: left;
   -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
@@ -331,12 +331,19 @@ li.book-index-item img.index-item-cover {
 }
 
 li.book-index-item img.index-item-cover-hover {
-  margin-left: 35px;
+  // margin-left: 35px;
   float: left;
-  opacity: .7;
+  opacity: .5;
   -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+}
+
+.img-wrapper {
+  width: 200px;
+  height: 300px;
+  display: block;
+  background-color: black;
 }
 
 li.book-index-item ul {
@@ -362,7 +369,10 @@ li.book-index-item {
   margin: 10px;
   margin-top: 10px;
   list-style-type: none;
-  padding: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 45px;
   width: 23%;
 }
 
