@@ -94,7 +94,7 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
     cloudinary.openUploadWidget(window.CLOUDINARY_SETTINGS_BOOK,
       function (error, payload) {
         $('.book-file-name').html(payload[0].original_filename);
-        that.url = payload[0].secure_url
+        that.url = payload[0].secure_url;
       }
     );
   },
@@ -105,7 +105,7 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
     cloudinary.openUploadWidget(window.CLOUDINARY_SETTINGS_COVER,
       function (error, payload) {
         $('.cover-file-name').html(payload[0].original_filename);
-        that.cover_url = payload[0].secure_url
+        that.cover_url = payload[0].secure_url;
       }
     );
   }
