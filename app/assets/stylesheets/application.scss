@@ -432,8 +432,8 @@ hr {
 div.reviews {
   float: left;
   background: #D4E1E9;
-  min-width: 550px;
-  width: calc(100% - 690px);
+  min-width: 400px;
+  width: calc(100% - 700px);
   margin-top: 10px;
   margin-left: 10px;
   min-height: 520px;
@@ -444,7 +444,7 @@ div.reviews {
 
 .book-show {
   height: calc(100% - 80px);
-  min-width: 1400px;
+  width: 100%;
 }
 
 div.book-information {
@@ -584,6 +584,7 @@ div.show-buttons {
 }
 
 body {
+  width: 100%;
   overflow: visible;
 }
 
