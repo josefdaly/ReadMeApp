@@ -586,6 +586,8 @@ div.show-buttons {
 body {
   width: 100%;
   overflow: visible;
+  background-image: url("http://goldenstateeventsinc.com/goldenwp/wp-content/uploads/2015/04/bigstock-Stack-Of-Books-70033240.jpg");
+  background-size: cover;
 }
 
 .read-page {
@@ -594,7 +596,7 @@ body {
 
 #main {
   position: absolute;
-  min-width: 750px;
+  // min-width: 750px;
   width: 100%;
   height: calc(100% - 80px);
   background: #F0F5FF;
