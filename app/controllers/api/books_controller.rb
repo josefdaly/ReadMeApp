@@ -34,6 +34,7 @@ module Api
         # @books = Book.where("LOWER(title) ~ ?", params[:query].downcase)
 
         # search by title and author name
+        # still buggy
         @books = Book.joins(:author).where(
           "LOWER(books.title) ~ ? OR LOWER(users.fname || ' ' || users.lname) ~ ?",
           params[:query].downcase,
@@ -55,6 +56,7 @@ module Api
     def featured
       id_arr = []
       sample_id_arr = []
+      # inefficient; figure out better way to sample book table
       Book.all.each do |book|
         id_arr << book.id
       end
