@@ -2,6 +2,9 @@ ReadMe.Views.NavBar = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.router = options.router
     this.model = options.model
+    // $('.modal-dialog').draggable({
+    //   handle: ".modal-header"
+    // });
   },
 
   template: JST['navbar'],

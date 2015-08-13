@@ -671,3 +671,24 @@ div.book-status-bar span {
 div.book-status-bar span:hover {
   color: blue;
 }
+
+
+.modal-header {
+  background-color: #135987;
+  color: white;
+}
+
+.modal-header .close {
+  color: white;
+  opacity: .6;
+}
+
+.modal-header .close:hover {
+  color: white;
+  opacity: 1;
+}
+
+
+.modal-content {
+  border-radius: 0;
+}
