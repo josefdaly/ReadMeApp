@@ -603,48 +603,51 @@ body {
 }
 
 
-          #area {
-            width: 100%;
-            height: calc(100% - 8px);
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 1250px;
-            background: white;
-            padding: 40px;
-            padding-top: 0px;
+#area {
+  width: 100%;
+  height: calc(100% - 8px);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1250px;
+  background: white;
+  padding: 40px;
+  padding-top: 0px;
+}
 
-          }
-          #area iframe {
-            border: none;
-          }
-          #prev {
-            left: 10px;
-          }
-          #next {
-            right: 10px;
+#area iframe {
+  border: none;
+}
 
-          }
-          .arrow {
-            position: absolute;
-            top: 35%;
-            margin-top: -32px;
-            font-size: 150px;
-            color: #969696;
-            font-family: arial, sans-serif;
-            font-weight: bold;
-            cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-            opacity: .5;
-          }
-          .arrow:hover {
-            color: #777;
-          }
+#prev {
+  left: 10px;
+}
 
-          .arrow:active {
-            color: #000;
-          }
+#next {
+  right: 10px;
+}
+
+.arrow {
+  position: absolute;
+  top: 35%;
+  margin-top: -32px;
+  font-size: 150px;
+  color: #969696;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  opacity: .5;
+}
+
+.arrow:hover {
+  color: #777;
+}
+
+.arrow:active {
+  color: #000;
+}
 
 .destroy-book {
   float: right;
