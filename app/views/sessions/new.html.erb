@@ -1,1 +1,28 @@
 <%= render partial: "shared/new", locals: {header: 'Sign In'} %>
+
+<script type="text/javascript">
+
+  $('button.guest').click(function(){
+    alert('YO')
+    var username =
+      ['g','u','e','s','t','@','e','x','a','m','p','l','e','.','c','o','m'];
+    var password = ['1','2','3','4','5','6'];
+    var userCounter = 0;
+    var passCounter = 0;
+    for(var i = 0; i < username.length; i++){
+      setTimeout(function(){
+
+        var current = $('.email').val();
+        $('.email').val(current + username[userCounter]);
+        userCounter += 1;
+      }.bind(this), i * 250)
+    }
+    for(var j = 0; j < password.length; j++){
+      setTimeout(function(){
+        var current = $('.password').val();
+        $('.password').val(current + password[passCounter]);
+        passCounter += 1;
+      }.bind(this), j + username.length * 250)
+    }
+  })
+</script>

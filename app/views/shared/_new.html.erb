@@ -12,13 +12,13 @@
 <% end %>
 <form class="form-signin center-block" action="<%= action %>" method="post">
   <br>
-  <input class="center-block" type="text" name="user[email]" placeholder="Email">
+  <input class="email center-block" type="text" name="user[email]" placeholder="Email">
   <% if header == 'Sign Up' %>
 
     <input class="center-block" type="text" name="user[fname]" placeholder="John">
     <input class="center-block" type="text" name="user[lname]" placeholder="Doe">
   <% end %>
-  <input class="center-block" type="password" name="user[password]" placeholder="Password">
+  <input class="password center-block" type="password" name="user[password]" placeholder="Password">
   <br>
   <input class="btn btn-sm btn-default center-block" type="submit" value="<%= header %>">
 <% if header == 'Sign In' %>
@@ -29,11 +29,13 @@
         <%= link_to('Already a member?', new_session_url)%>
       </span>
       <% elsif header == 'Sign In' %>
-        <form class="form-signin center-block" action="<%= action %>" method="post">
+        <!-- Test button -->
+        <button class="guest btn btn-sm btn-default center-block" name="button">Guest Login</button>
+        <!-- <form class="form-signin center-block" action="<%= action %>" method="post">
           <input type="hidden" name="user[email]" value="guest">
           <input type="hidden" name="user[password]" value="123456">
-          <input class="btn btn-sm btn-default center-block" name="name" type="submit" value="Guest?">
-        </form>
+          <input class="guest btn btn-sm btn-default center-block" name="name" type="submit" value="Guest?">
+        </form> -->
         <span class="sign-in-toggle center-block">
         <%= link_to('New to readMe?', new_user_url) %>
         </span>
