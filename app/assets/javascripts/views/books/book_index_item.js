@@ -6,10 +6,10 @@ ReadMe.Views.BookIndexItem = Backbone.View.extend({
   },
 
   events: {
-    'click .open-book': 'bookRead',
-    'click .link-book-show': 'bookShow',
-    'mouseover': 'showIcon',
-    'mouseout': 'hideIcon'
+    'click .index-read-button': 'bookRead',
+    'click .index-rate-button': 'bookShow',
+    'mouseover': 'imgUp',
+    'mouseout': 'imgDown'
   },
 
   tagName: 'li',
@@ -22,33 +22,53 @@ ReadMe.Views.BookIndexItem = Backbone.View.extend({
     return this;
   },
 
-  showIcon: function () {
-    $readIcon = this.$('.open-book-hidden')
-    $readIcon.removeClass('open-book-hidden')
-    $readIcon.addClass('open-book')
-
-    $viewIcon = this.$('.link-book-show-hidden')
-    $viewIcon.removeClass('link-book-show-hidden')
-    $viewIcon.addClass('link-book-show')
+  imgUp: function () {
+    $imgWrapper = this.$('.img-wrapper')
+    $imgWrapper.addClass('grow')
+    $img = this.$('.index-item-cover')
+    $img.addClass('img-up')
 
     $cover = this.$('.index-item-cover')
-    $cover.removeClass('index-item-cover')
     $cover.addClass('index-item-cover-hover')
   },
 
-  hideIcon: function () {
-    $readIcon = this.$('.open-book')
-    $readIcon.removeClass('open-book')
-    $readIcon.addClass('open-book-hidden')
+  imgDown: function () {
+    $imgWrapper = this.$('.img-wrapper')
+    $imgWrapper.removeClass('grow')
+    $img = this.$('.index-item-cover')
+    $img.removeClass('img-up')
 
-    $viewIcon = this.$('.link-book-show')
-    $viewIcon.removeClass('link-book-show')
-    $viewIcon.addClass('link-book-show-hidden')
-
-    $cover = this.$('.index-item-cover-hover')
+    $cover = this.$('.index-item-cover')
     $cover.removeClass('index-item-cover-hover')
-    $cover.addClass('index-item-cover')
   },
+
+  // showIcon: function () {
+  //   $readIcon = this.$('.open-book-hidden')
+  //   $readIcon.removeClass('open-book-hidden')
+  //   $readIcon.addClass('open-book')
+  //
+  //   $viewIcon = this.$('.link-book-show-hidden')
+  //   $viewIcon.removeClass('link-book-show-hidden')
+  //   $viewIcon.addClass('link-book-show')
+  //
+  //   $cover = this.$('.index-item-cover')
+  //   $cover.removeClass('index-item-cover')
+  //   $cover.addClass('index-item-cover-hover')
+  // },
+  //
+  // hideIcon: function () {
+  //   $readIcon = this.$('.open-book')
+  //   $readIcon.removeClass('open-book')
+  //   $readIcon.addClass('open-book-hidden')
+  //
+  //   $viewIcon = this.$('.link-book-show')
+  //   $viewIcon.removeClass('link-book-show')
+  //   $viewIcon.addClass('link-book-show-hidden')
+  //
+  //   $cover = this.$('.index-item-cover-hover')
+  //   $cover.removeClass('index-item-cover-hover')
+  //   $cover.addClass('index-item-cover')
+  // },
 
   bookRead: function () {
     Backbone.history.navigate('/book/' + this.model.id, { trigger: true })

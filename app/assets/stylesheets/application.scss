@@ -324,19 +324,37 @@ li.book-index-item img.cover {
 
 li.book-index-item img.index-item-cover {
   // margin-left: 35px;
-  float: left;
+  position: absolute;
+  -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+  box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+  transition: top 0.2s ease-in-out;
+  z-index: 5;
+}
+
+li.book-index-item img.index-item-cover-hover {
+  // margin-left: 35px;
+  position: absolute;
+  opacity: .5;
   -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
   box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
 }
 
-li.book-index-item img.index-item-cover-hover {
-  // margin-left: 35px;
-  float: left;
-  opacity: .5;
-  -webkit-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
-  box-shadow: 1px 4px 20px 2px rgba(0,0,0,0.75);
+.index-read-button {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100px;
+  border-radius: 0px;
+}
+
+.index-rate-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  border-radius: 0px;
 }
 
 .img-wrapper {
@@ -344,6 +362,21 @@ li.book-index-item img.index-item-cover-hover {
   height: 300px;
   display: block;
   background-color: black;
+  position: absolute;
+  overflow: hidden;
+}
+
+.grow {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.img-up {
+  bottom: 34px;
+  transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
 li.book-index-item ul {
@@ -351,12 +384,10 @@ li.book-index-item ul {
   margin-left: 52px;
   // text-align: center;
   height: 20px;
+  display: block;
+  position: absolute;
+  bottom: 0;
 }
-
-ol.book-index-list li.book-index-item ul {
-  // transform: translateX(90%);
-}
-
 
 li.book-index-item span {
 
@@ -374,6 +405,7 @@ li.book-index-item {
   padding-bottom: 10px;
   padding-left: 45px;
   width: 23%;
+  height: 340px;
 }
 
 li.book-index-item li {
