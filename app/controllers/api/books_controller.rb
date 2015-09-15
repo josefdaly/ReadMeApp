@@ -1,5 +1,6 @@
 module Api
   class BooksController < ApiController
+    skip_before_action :require_signed_in!, only: [:index, :show]
     def create
       @book = Book.new(book_params)
 
