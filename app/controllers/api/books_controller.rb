@@ -1,6 +1,14 @@
 module Api
   class BooksController < ApiController
     skip_before_action :require_signed_in!, only: [:index, :show]
+    before_action :cors_set_access_control_headers
+
+
+    def cors_set_access_control_headers
+      headers['Access-Control-Allow-Origin'] = '*'
+      headers['Access-Control-Allow-Methods'] = 'GET'
+    end
+
     def create
       @book = Book.new(book_params)
 

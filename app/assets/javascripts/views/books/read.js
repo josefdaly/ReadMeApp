@@ -31,9 +31,6 @@ ReadMe.Views.BookRead = Backbone.View.extend({
   startBook: function () {
     this.Book = ePub(this.model.get('doc_url'))
     this.Book.renderTo("area")
-    var that = this;
-    this.Book.on("book:ready", function (that) {debugger})
-    debugger;
   },
 
   prevPage: function () {
@@ -55,9 +52,7 @@ ReadMe.Views.BookRead = Backbone.View.extend({
   },
 
   toggleFont: function () {
-    debugger
     if (this.fontStyle === 'serif') {
-      debugger
       this.Book.setStyle("font-family", "Sans-Serif");
       this.fontStyle = 'sans-serif';
     } else {
