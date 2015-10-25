@@ -20,12 +20,12 @@ module Api
     end
 
     def show
-      @book = Book.includes(:author, :subjects).find(params[:id])
+      @book = Book.includes(:author, :subjects, :reviews).find(params[:id])
       render :show
     end
 
     def index
-      @books = Book.all
+      @books = Book.includes(:author, :reviews).all
 
       render :index
     end
@@ -44,7 +44,7 @@ module Api
 
         # search by title and author name
         # still buggy
-        @books = Book.joins(:author).where(
+        @books = Book.includes(:author, :reviews).joins(:author).where(
           "LOWER(books.title) ~ ? OR LOWER(users.fname || ' ' || users.lname) ~ ?",
           params[:query].downcase,
           params[:query].downcase
@@ -57,7 +57,7 @@ module Api
     end
 
     def recent
-      @books = Book.last(4)
+      @books = Book.includes(:author, :reviews).last(4)
 
       render :index
     end
@@ -78,7 +78,7 @@ module Api
         id_arr.delete_at(rand_index)
       end
 
-      @books = Book.find(sample_id_arr.split).shuffle!
+      @books = Book.includes(:author, :reviews).find(sample_id_arr.split).shuffle!
       render :index
     end
 
