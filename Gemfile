@@ -17,6 +17,7 @@ gem 'figaro'
 gem 'newrelic_rpm'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'annotate'
   gem 'byebug'
   gem 'better_errors'
