@@ -83,13 +83,16 @@ module Api
         @books = Book.includes(:author, :reviews).find(sample_id_arr.split).shuffle!
         render :index
       else
-        render json: {}
+        @books = []
+        render :index
       end
     end
 
     def top_rated
-      # @books = Book.includes(:author, reviews: :author).limit(10).order(:average_rating)
-      # render :index
+      @books = Book.includes(:author, reviews: :author).all.to_a.sort do |book|
+        book.average_rating
+      end.last(4)
+      render :index
     end
 
     private
