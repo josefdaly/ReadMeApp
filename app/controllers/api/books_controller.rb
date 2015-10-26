@@ -90,7 +90,7 @@ module Api
 
     def top_rated
       @books = Book.includes(:author, reviews: :author).all.to_a.sort do |book|
-        book.average_rating
+        book.average_quantitative_rating
       end.last(4)
       render :index
     end
