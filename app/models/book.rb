@@ -43,8 +43,11 @@ class Book < ActiveRecord::Base
     reviews_arr = self.reviews.to_a.map do |review|
       review.quantitative
     end
-    
-    reviews_arr.inject(:+) / reviews_arr.length
+    if reviews_arr.length > 0
+      reviews_arr.inject(:+) / reviews_arr.length
+    else
+      0
+    end
   end
 
   def in_library_of?(user)
