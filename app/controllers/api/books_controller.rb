@@ -20,12 +20,12 @@ module Api
     end
 
     def show
-      @book = Book.includes(:author, :subjects, :reviews).find(params[:id])
+      @book = Book.includes(:author, :subjects, reviews: :author).find(params[:id])
       render :show
     end
 
     def index
-      @books = Book.includes(:author, :reviews).all
+      @books = Book.includes(:author, reviews: :author).all
 
       render :index
     end
@@ -44,7 +44,7 @@ module Api
 
         # search by title and author name
         # still buggy
-        @books = Book.includes(:author, :reviews).joins(:author).where(
+        @books = Book.includes(:author, reviews: :author).joins(:author).where(
           "LOWER(books.title) ~ ? OR LOWER(users.fname || ' ' || users.lname) ~ ?",
           params[:query].downcase,
           params[:query].downcase
@@ -57,7 +57,7 @@ module Api
     end
 
     def recent
-      @books = Book.includes(:author, :reviews).last(4)
+      @books = Book.includes(:author, reviews: :author).last(4)
 
       render :index
     end
@@ -66,20 +66,30 @@ module Api
       id_arr = []
       sample_id_arr = []
       # inefficient; figure out better way to sample book table
-      Book.all.each do |book|
-        id_arr << book.id
+      Book.all.to_a.reverse.each_with_index do |book, idx|
+        id_arr << book.id if idx > 4
       end
       current_user.written_works.each do |book|
         id_arr.delete(book.id)
       end
-      8.times do |i|
+      i = 0
+      while i < 4 && id_arr.count > 0
         rand_index = (rand * id_arr.length).to_i
         sample_id_arr << id_arr[rand_index]
         id_arr.delete_at(rand_index)
+        i+=1
       end
+      if sample_id_arr.count > 0
+        @books = Book.includes(:author, :reviews).find(sample_id_arr.split).shuffle!
+        render :index
+      else
+        render json: {}
+      end
+    end
 
-      @books = Book.includes(:author, :reviews).find(sample_id_arr.split).shuffle!
-      render :index
+    def top_rated
+      # @books = Book.includes(:author, reviews: :author).limit(10).order(:average_rating)
+      # render :index
     end
 
     private

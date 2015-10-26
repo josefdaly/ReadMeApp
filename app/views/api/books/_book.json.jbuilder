@@ -1,4 +1,5 @@
 json.extract! book, :id, :title, :description, :created_at, :doc_url, :author_id, :cover_url
+json.average_rating book.average_quantitative_rating
 if current_user
   if book.in_library_of?(current_user)
     json.library_item do

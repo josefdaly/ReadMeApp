@@ -39,6 +39,14 @@ class Book < ActiveRecord::Base
     foreign_key: :book_id
   )
 
+  def average_quantitative_rating
+    reviews_arr = self.reviews.to_a.map do |review|
+      review.quantitative
+    end
+    
+    reviews_arr.inject(:+) / reviews_arr.length
+  end
+
   def in_library_of?(user)
     condition = false
     self.library_items.each do |item|

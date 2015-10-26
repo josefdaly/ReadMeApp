@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get "search", on: :collection
       get "recent", on: :collection
       get "featured", on: :collection
+      get "top_rated", on: :collection
     end
     resources :subjects, only: [:create, :show, :index]
     resources :book_subjects, only: [:create, :destroy]

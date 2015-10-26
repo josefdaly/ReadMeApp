@@ -10,8 +10,8 @@ module Api
     end
 
     def show
-      @review = Review.find(params[:id])
-      render json: @review
+      @review = Review.includes(:author).find(params[:id])
+      render :show
     end
 
     private
