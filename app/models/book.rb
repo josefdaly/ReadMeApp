@@ -44,7 +44,7 @@ class Book < ActiveRecord::Base
       review.quantitative
     end
     if reviews_arr.length > 0
-      reviews_arr.inject(:+) / reviews_arr.length
+      reviews_arr.inject(:+).to_f / reviews_arr.length.to_f
     else
       0
     end
